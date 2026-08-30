@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worldwide Volunteers for Change</title>
+    <!-- Tailwind CSS for Modern Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        trustBlue: '#0E4B82',
+                        earthRed: '#D94A26',
+                        warmGold: '#F4B41A',
+                        offWhite: '#F8F9FA'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-offWhite text-gray-800 font-sans antialiased">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-trustBlue text-white text-xs sm:text-sm py-2 px-4 flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+            <span class="flex items-center"><i data-lucide="map-pin" class="w-3.5 h-3.5 mr-1 text-warmGold"></i> Ngong Nairobi, Kenya</span>
+            <span class="hidden md:flex items-center"><i data-lucide="phone" class="w-3.5 h-3.5 mr-1 text-warmGold"></i> +254 769 525 949</span>
+        </div>
+        <div class="flex items-center space-x-3">
+            <a href="#volunteer" class="hover:underline">Join as Volunteer</a>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="sticky top-0 z-40 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-trustBlue text-warmGold rounded-full flex items-center justify-center font-bold text-xl shadow">WV</div>
+                <div>
+                    <span class="block text-lg font-extrabold text-trustBlue leading-tight">WORLDWIDE VOLUNTEERS</span>
+                    <span class="block text-xs font-semibold text-earthRed tracking-widest uppercase">FOR CHANGE</span>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-8 font-medium text-gray-700">
+                <a href="#about" class="hover:text-trustBlue transition">About Us</a>
+                <a href="#pillars" class="hover:text-trustBlue transition">Our Pillars</a>
+                <a href="#counties" class="hover:text-trustBlue transition">Where We Work</a>
+            </div>
+            <button onclick="toggleDonateModal()" class="bg-trustBlue hover:bg-blue-900 text-white px-5 py-2.5 rounded-lg font-bold shadow-md transition flex items-center">
+                <i data-lucide="heart" class="w-4 h-4 mr-2 text-earthRed fill-current"></i> Donate Now
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="relative bg-gradient-to-r from-trustBlue to-blue-900 text-white py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="bg-warmGold text-trustBlue text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Registered Non-Profit NGO</span>
+                <h1 class="text-4xl sm:text-5xl font-black leading-tight">Transforming Lives Through Education, Health & Digital Inclusion</h1>
+                <p class="text-blue-100 text-lg">Empowering vulnerable children, youth, and communities across Kenya with sustainable access to learning, healthcare, and economic tools.</p>
+                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-2">
+                    <a href="#volunteer" class="bg-earthRed hover:bg-red-700 text-white px-6 py-3.5 rounded-lg font-bold shadow-lg text-center transition">Become a Volunteer</a>
+                    <a href="#counties" class="border-2 border-white hover:bg-white hover:text-trustBlue text-white px-6 py-3.5 rounded-lg font-bold text-center transition">Explore Operating Counties</a>
+                </div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-2xl">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-warmGold"><i data-lucide="shield-check" class="mr-2"></i> Immediate Community Impact</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/10 p-4 rounded-xl text-center">
+                        <div class="text-3xl font-extrabold text-warmGold">5</div>
+                        <div class="text-xs text-blue-100 mt-1">Active Counties</div>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-xl text-center">
+                        <div class="text-3xl font-extrabold text-warmGold">4</div>
+                        <div class="text-xs text-blue-100 mt-1">Core Pillars</div>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-xl text-center col-span-2">
+                        <div class="text-xl font-bold text-white">100% Volunteer-Driven</div>
+                        <div class="text-xs text-blue-200">Direct-to-community program execution</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4 Core Pillars Section -->
+    <section id="pillars" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="text-3xl font-extrabold text-trustBlue">Our Core Pillars of Impact</h2>
+            <p class="text-gray-600 mt-2">Driven by our mission to provide structured platforms that transform lives across key societal sectors.</p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-trustBlue hover:shadow-lg transition">
+                <div class="w-12 h-12 bg-blue-100 text-trustBlue rounded-lg flex items-center justify-center mb-4"><i data-lucide="book-open"></i></div>
+                <h3 class="font-bold text-lg text-trustBlue mb-2">Education Access</h3>
+                <p class="text-sm text-gray-600">Paying school fees, providing learning materials, and supporting orphans and vulnerable children (OVCs).</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-earthRed hover:shadow-lg transition">
+                <div class="w-12 h-12 bg-red-100 text-earthRed rounded-lg flex items-center justify-center mb-4"><i data-lucide="heart-pulse"></i></div>
+                <h3 class="font-bold text-lg text-trustBlue mb-2">Health & Awareness</h3>
+                <p class="text-sm text-gray-600">Promoting public health, hygiene, HIV/AIDS mitigation, and reproductive health education in communities.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-warmGold hover:shadow-lg transition">
+                <div class="w-12 h-12 bg-yellow-100 text-yellow-700 rounded-lg flex items-center justify-center mb-4"><i data-lucide="laptop"></i></div>
+                <h3 class="font-bold text-lg text-trustBlue mb-2">ICT & Digital Skills</h3>
+                <p class="text-sm text-gray-600">Equipping youth and school-going children with digital literacy, computer training, and technology tools.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-green-600 hover:shadow-lg transition">
+                <div class="w-12 h-12 bg-green-100 text-green-700 rounded-lg flex items-center justify-center mb-4"><i data-lucide="trending-up"></i></div>
+                <h3 class="font-bold text-lg text-trustBlue mb-2">Economic Empowerment</h3>
+                <p class="text-sm text-gray-600">Providing training, micro-support, and necessities to poor women, caregivers, and vulnerable groups.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive County Map / Hub Section -->
+    <section id="counties" class="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-3xl font-extrabold text-trustBlue">Operating Counties</h2>
+                <p class="text-gray-600 mt-2">Select a county to inspect localized outreach and field projects.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <button onclick="selectCounty('nairobi')" id="btn-nairobi" class="county-btn bg-trustBlue text-white px-5 py-2.5 rounded-full font-bold text-sm shadow">Nairobi</button>
+                <button onclick="selectCounty('kajiado')" id="btn-kajiado" class="county-btn bg-white text-gray-700 hover:bg-gray-200 px-5 py-2.5 rounded-full font-bold text-sm shadow">Kajiado</button>
+                <button onclick="selectCounty('kakamega')" id="btn-kakamega" class="county-btn bg-white text-gray-700 hover:bg-gray-200 px-5 py-2.5 rounded-full font-bold text-sm shadow">Kakamega</button>
+                <button onclick="selectCounty('makueni')" id="btn-makueni" class="county-btn bg-white text-gray-700 hover:bg-gray-200 px-5 py-2.5 rounded-full font-bold text-sm shadow">Makueni</button>
+                <button onclick="selectCounty('kiambu')" id="btn-kiambu" class="county-btn bg-white text-gray-700 hover:bg-gray-200 px-5 py-2.5 rounded-full font-bold text-sm shadow">Kiambu</button>
+            </div>
+            <div id="county-card" class="bg-white p-8 rounded-2xl shadow-xl border border-gray-200 max-w-3xl mx-auto">
+                <div class="flex items-center space-x-3 text-earthRed font-bold text-sm uppercase mb-2">
+                    <i data-lucide="map-pin"></i> <span id="county-title">Nairobi County HQ</span>
+                </div>
+                <h3 id="county-heading" class="text-2xl font-bold text-trustBlue mb-3">Urban ICT & Education Hub</h3>
+                <p id="county-desc" class="text-gray-600 leading-relaxed mb-6">Central hub managing tech literacy programs, digital volunteer coordination, and emergency relief distribution for vulnerable urban settlements.</p>
+                <div class="grid grid-cols-2 gap-4 border-t border-gray-100 pt-4">
+                    <div>
+                        <span class="block text-xs text-gray-400 font-bold uppercase">Focus Area</span>
+                        <span id="county-focus" class="text-sm font-semibold text-trustBlue">ICT & School Supplies</span>
+                    </div>
+                    <div>
+                        <span class="block text-xs text-gray-400 font-bold uppercase">Primary Beneficiaries</span>
+                        <span id="county-target" class="text-sm font-semibold text-trustBlue">Youth & Street Children</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Onboarding Form -->
+    <section id="volunteer" class="py-16 bg-white border-t border-gray-200">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-extrabold text-trustBlue">Join As A Volunteer</h2>
+                <p class="text-gray-600 mt-2">Sign up to support field projects across Nairobi, Kajiado, Kakamega, Makueni, or Kiambu.</p>
+            </div>
+            <form onsubmit="handleVolunteerSubmit(event)" class="space-y-4">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Full Name</label>
+                        <input type="text" required placeholder="e.g. Jane Doe" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-trustBlue focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Email Address</label>
+                        <input type="email" required placeholder="jane@example.com" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-trustBlue focus:outline-none">
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Preferred County</label>
+                        <select class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-trustBlue focus:outline-none">
+                            <option>Nairobi</option>
+                            <option>Kajiado</option>
+                            <option>Kakamega</option>
+                            <option>Makueni</option>
+                            <option>Kiambu</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Primary Skill Area</label>
+                        <select class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-trustBlue focus:outline-none">
+                            <option>Education & Teaching</option>
+                            <option>Health & Sanitation</option>
+                            <option>ICT & Technical Training</option>
+                            <option>Field Operations & Logistics</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-trustBlue hover:bg-blue-900 text-white font-bold py-3 rounded-lg shadow transition">Submit Volunteer Application</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 px-4 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div>
+                <span class="text-lg font-bold text-white block mb-2">Worldwide Volunteers for Change</span>
+                <p class="text-xs text-gray-400 leading-relaxed">Registered Non-Governmental Organization in Kenya. Dedicated to transforming lives through education, health, technology, and economic opportunities.</p>
+            </div>
+            <div>
+                <span class="text-sm font-bold text-white block mb-2">Headquarters</span>
+            </div>
+            <div>
+                <span class="text-sm font-bold text-white block mb-2">Contact Us</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dual Payment Modal (M-Pesa / Card) -->
+    <div id="donateModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+            <button onclick="toggleDonateModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i data-lucide="x"></i></button>
+            <h3 class="text-xl font-extrabold text-trustBlue mb-1">Make a Contribution</h3>
+            <p class="text-xs text-gray-500 mb-6">Choose your preferred payment method below.</p>
+            
+            <div class="flex border-b border-gray-200 mb-6">
+                <button onclick="switchTab('mpesa')" id="tab-mpesa" class="w-1/2 py-2 font-bold text-sm text-green-600 border-b-2 border-green-600">M-PESA Express</button>
+                <button onclick="switchTab('card')" id="tab-card" class="w-1/2 py-2 font-bold text-sm text-gray-400 border-b-2 border-transparent">Card / Global</button>
+            </div>
+
+            <!-- M-Pesa Panel -->
+            <div id="panel-mpesa" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">M-Pesa Phone Number</label>
+                    <input type="tel" placeholder="07XX XXX XXX" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Amount (KES)</label>
+                    <input type="number" value="1500" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:outline-none">
+                </div>
+                <button onclick="alert('M-Pesa STK Push initiated on your phone!')" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg shadow">Trigger M-Pesa Prompt</button>
+            </div>
+
+            <!-- Card Panel -->
+            <div id="panel-card" class="space-y-4 hidden">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Card Details</label>
+                    <input type="text" placeholder="4532 •••• •••• ••••" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Amount (USD)</label>
+                    <input type="number" value="15" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:outline-none">
+                </div>
+                <button onclick="alert('Processing Card Payment...')" class="w-full bg-trustBlue hover:bg-blue-900 text-white font-bold py-3 rounded-lg shadow">Pay via Credit Card</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive JavaScript Logic -->
+    <script>
+        lucide.createIcons();
+
+        // County Data Store
+        const counties = {
+            nairobi: {
+                title: 'Nairobi County HQ',
+                heading: 'Urban ICT & Education Hub',
+                desc: 'Central hub managing tech literacy programs, digital volunteer coordination, and emergency relief distribution for vulnerable urban settlements.',
+                focus: 'ICT & School Supplies',
+                target: 'Youth & OVCs'
+            },
+            kajiado: {
+                title: 'Kajiado County Branch',
+                heading: 'Water, Sanitation & Community Health',
+                desc: 'Focusing on clean water access, hygiene sensitization, and healthcare outreach for peri-urban and rural pastoral communities.',
+                focus: 'Health & Sanitation',
+                target: 'Caregivers & Children'
+            },
+            kakamega: {
+                title: 'Kakamega County Branch',
+                heading: 'School Fee Subsidies & Materials',
+                desc: 'Providing direct financial assistance for school fees, uniforms, and learning kits for children living with elderly caregivers.',
+                focus: 'Education Access',
+                target: 'Orphans & Vulnerable Children'
+            },
+            makueni: {
+                title: 'Makueni County Branch',
+                heading: 'Women Economic Inclusion & Livelihoods',
+                desc: 'Delivering agricultural and vocational training to empower poor women and caregivers with sustainable income sources.',
+                focus: 'Economic Empowerment',
+                target: 'Poor Women & Caregivers'
+            },
+            kiambu: {
+                title: 'Kiambu County Branch',
+                heading: 'Youth Empowerment & Skills Center',
+                desc: 'Engaging local youth in technology workshops, community development drives, and peer education programs.',
+                focus: 'ICT & Youth Leadership',
+                target: 'Unemployed Youth'
+            }
+        };
+
+        function selectCounty(key) {
+            const data = counties[key];
+            document.getElementById('county-title').innerText = data.title;
+            document.getElementById('county-heading').innerText = data.heading;
+            document.getElementById('county-desc').innerText = data.desc;
+            document.getElementById('county-focus').innerText = data.focus;
+            document.getElementById('county-target').innerText = data.target;
+
+            document.querySelectorAll('.county-btn').forEach(btn => {
+                btn.className = 'county-btn bg-white text-gray-700 hover:bg-gray-200 px-5 py-2.5 rounded-full font-bold text-sm shadow';
+            });
+            document.getElementById(`btn-${key}`).className = 'county-btn bg-trustBlue text-white px-5 py-2.5 rounded-full font-bold text-sm shadow';
+        }
+
+        function updateCalculator(val) {
+            document.getElementById('calc-amount').innerText = `KES ${parseInt(val).toLocaleString()}`;
+            const impact = document.getElementById('calc-impact');
+            if(val < 1000) {
+                impact.innerText = "Provides basic stationery kits (exercise books and pens) for 2 students.";
+            } else if(val < 3000) {
+                impact.innerText = "Provides 1 child with a complete school kit (Textbooks, exercise books, stationery, and uniform support).";
+            } else if(val < 6000) {
+                impact.innerText = "Covers partial term school fees and learning materials for an underprivileged OVC student.";
+            } else {
+                impact.innerText = "Fully equips a local community digital learning corner with solar/tech support and materials for 10+ kids.";
+            }
+        }
+
+        function toggleDonateModal() {
+            document.getElementById('donateModal').classList.toggle('hidden');
+        }
+
+        function switchTab(tab) {
+            const mpesaTab = document.getElementById('tab-mpesa');
+            const cardTab = document.getElementById('tab-card');
+            const mpesaPanel = document.getElementById('panel-mpesa');
+            const cardPanel = document.getElementById('panel-card');
+
+            if (tab === 'mpesa') {
+                mpesaTab.className = "w-1/2 py-2 font-bold text-sm text-green-600 border-b-2 border-green-600";
+                cardTab.className = "w-1/2 py-2 font-bold text-sm text-gray-400 border-b-2 border-transparent";
+                mpesaPanel.classList.remove('hidden');
+                cardPanel.classList.add('hidden');
+            } else {
+                cardTab.className = "w-1/2 py-2 font-bold text-sm text-trustBlue border-b-2 border-trustBlue";
+                mpesaTab.className = "w-1/2 py-2 font-bold text-sm text-gray-400 border-b-2 border-transparent";
+                cardPanel.classList.remove('hidden');
+                mpesaPanel.classList.add('hidden');
+            }
+        }
+
+        function handleVolunteerSubmit(e) {
+            e.preventDefault();
+            alert('Thank you for applying! Our volunteer coordination team in Nairobi will contact you shortly.');
+        }
+    </script>
+</body>
+</html>
