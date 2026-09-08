@@ -46,14 +46,29 @@
                     <span class="block text-xs font-semibold text-earthRed tracking-widest uppercase">FOR CHANGE</span>
                 </div>
             </div>
-            <div class="hidden md:flex space-x-8 font-medium text-gray-700">
+
+            <!-- Global Navigation Links -->
+            <div class="hidden lg:flex space-x-6 font-medium text-gray-700 text-sm">
                 <a href="#about" class="hover:text-trustBlue transition">About Us</a>
                 <a href="#pillars" class="hover:text-trustBlue transition">Our Pillars</a>
                 <a href="#counties" class="hover:text-trustBlue transition">Where We Work</a>
+                <a href="#gallery" class="hover:text-trustBlue transition">Field Proof</a>
+                <a href="#events" class="hover:text-trustBlue transition">Events</a>
+                <a href="#blog" class="hover:text-trustBlue transition">Blog & Stories</a>
             </div>
-            <button onclick="toggleDonateModal()" class="bg-trustBlue hover:bg-blue-900 text-white px-5 py-2.5 rounded-lg font-bold shadow-md transition flex items-center">
-                <i data-lucide="heart" class="w-4 h-4 mr-2 text-earthRed fill-current"></i> Donate Now
-            </button>
+
+            <!-- Sleek & Compact Navigation Action Bar -->
+            <div class="flex items-center space-x-2 sm:space-x-3">
+                <!-- Sleek Micro Search Bar -->
+                <div class="relative">
+                    <input type="text" id="siteSearchInput" onkeyup="handleSiteSearch(this.value)" placeholder="Search..." class="w-24 sm:w-28 md:w-36 focus:w-44 bg-gray-100 text-[11px] py-1.5 pl-7 pr-3 rounded-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-trustBlue focus:bg-white transition-all duration-300">
+                    <i data-lucide="search" class="w-3 h-3 text-gray-400 absolute left-2.5 top-2.5 pointer-events-none"></i>
+                </div>
+
+                <button onclick="toggleDonateModal()" class="bg-trustBlue hover:bg-blue-900 text-white px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-lg font-bold text-xs shadow-md transition flex items-center whitespace-nowrap">
+                    <i data-lucide="heart" class="w-3.5 h-3.5 mr-1.5 text-earthRed fill-current"></i> Donate Now
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -153,6 +168,311 @@
         </div>
     </section>
 
+    <!-- FIELD PROOF GALLERY (Standard Group Style) -->
+    <section id="gallery" class="py-20 bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-mono font-bold text-earthRed uppercase tracking-widest block mb-2">FIELD PROOF & SHOWCASE</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-trustBlue tracking-tight">Our Proudest Impact.</h2>
+                <p class="text-gray-600 text-base sm:text-lg mt-3 font-serif italic">
+                    "Sometimes, the work just speaks for itself." Our volunteers deliver transformative projects across Kenya—here is a visual record of our impact in action.
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 mb-12">
+                <button onclick="filterGallery('all')" id="gfilter-all" class="gfilter-btn bg-trustBlue text-white text-xs font-bold px-6 py-2.5 rounded-full shadow-sm transition">All Work</button>
+                <button onclick="filterGallery('education')" id="gfilter-education" class="gfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-6 py-2.5 rounded-full transition">Education Drive</button>
+                <button onclick="filterGallery('health')" id="gfilter-health" class="gfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-6 py-2.5 rounded-full transition">Health Outreach</button>
+                <button onclick="filterGallery('ict')" id="gfilter-ict" class="gfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-6 py-2.5 rounded-full transition">ICT Workshops</button>
+                <button onclick="filterGallery('economic')" id="gfilter-economic" class="gfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-6 py-2.5 rounded-full transition">Livelihoods</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
+                <div class="gallery-item education group cursor-pointer bg-offWhite rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl transition duration-300 flex flex-col" onclick="openLightbox('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80', 'Kakamega School Kit Distribution', 'Kakamega County • Education', 'Equipped 150+ orphans and vulnerable children with full school uniform sets, textbooks, and stationery packages.')">
+                    <div class="relative h-64 overflow-hidden bg-gray-300">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="Kakamega School Kit Distribution" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-trustBlue/90 via-trustBlue/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                            <span class="text-white text-xs font-bold flex items-center"><i data-lucide="maximize-2" class="w-4 h-4 mr-2 text-warmGold"></i> View Full Image & Details</span>
+                        </div>
+                        <span class="absolute top-4 left-4 bg-trustBlue text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Kakamega County</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-2">
+                        <div>
+                            <span class="text-[11px] font-bold text-earthRed uppercase tracking-wider">Education Pillar</span>
+                            <h3 class="text-lg font-bold text-trustBlue group-hover:text-earthRed transition">School Kit & Tuition Support</h3>
+                            <p class="text-xs text-gray-600 mt-1 leading-relaxed">Providing learning essentials to 150+ students facing financial hardship in rural schools.</p>
+                        </div>
+                        <span class="text-xs font-bold text-trustBlue pt-3 border-t border-gray-200 flex items-center">Explore Project <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i></span>
+                    </div>
+                </div>
+
+                <div class="gallery-item ict group cursor-pointer bg-offWhite rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl transition duration-300 flex flex-col" onclick="openLightbox('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1200&q=80', 'Nairobi Youth Digital Bootcamp', 'Nairobi County • ICT Skills', 'A 4-week computer basics bootcamp training peri-urban high school graduates in essential digital workforce skills.')">
+                    <div class="relative h-64 overflow-hidden bg-gray-300">
+                        <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=800&q=80" alt="Nairobi Youth Digital Bootcamp" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-trustBlue/90 via-trustBlue/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                            <span class="text-white text-xs font-bold flex items-center"><i data-lucide="maximize-2" class="w-4 h-4 mr-2 text-warmGold"></i> View Full Image & Details</span>
+                        </div>
+                        <span class="absolute top-4 left-4 bg-trustBlue text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Nairobi HQ</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-2">
+                        <div>
+                            <span class="text-[11px] font-bold text-warmGold uppercase tracking-wider">ICT & Digital Skills</span>
+                            <h3 class="text-lg font-bold text-trustBlue group-hover:text-earthRed transition">Youth Tech Literacy Bootcamp</h3>
+                            <p class="text-xs text-gray-600 mt-1 leading-relaxed">Equipping peri-urban youth with computer literacy and online job search tools.</p>
+                        </div>
+                        <span class="text-xs font-bold text-trustBlue pt-3 border-t border-gray-200 flex items-center">Explore Project <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i></span>
+                    </div>
+                </div>
+
+                <div class="gallery-item health group cursor-pointer bg-offWhite rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl transition duration-300 flex flex-col" onclick="openLightbox('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80', 'Clean Water & Hygiene Camp', 'Kajiado County • Health Outreach', 'Distributed water purification tablets and conducted reproductive health and hygiene workshops.')">
+                    <div class="relative h-64 overflow-hidden bg-gray-300">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Clean Water & Hygiene Camp" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-trustBlue/90 via-trustBlue/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                            <span class="text-white text-xs font-bold flex items-center"><i data-lucide="maximize-2" class="w-4 h-4 mr-2 text-warmGold"></i> View Full Image & Details</span>
+                        </div>
+                        <span class="absolute top-4 left-4 bg-trustBlue text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Kajiado County</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-2">
+                        <div>
+                            <span class="text-[11px] font-bold text-earthRed uppercase tracking-wider">Health Outreach</span>
+                            <h3 class="text-lg font-bold text-trustBlue group-hover:text-earthRed transition">Water & Health Sanitation Drive</h3>
+                            <p class="text-xs text-gray-600 mt-1 leading-relaxed">Promoting public health, clean water access, and hygiene education in rural communities.</p>
+                        </div>
+                        <span class="text-xs font-bold text-trustBlue pt-3 border-t border-gray-200 flex items-center">Explore Project <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i></span>
+                    </div>
+                </div>
+
+                <div class="gallery-item economic group cursor-pointer bg-offWhite rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl transition duration-300 flex flex-col" onclick="openLightbox('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80', 'Caregiver Livelihoods Program', 'Makueni County • Economic Inclusion', 'Provided vocational toolkits and agricultural support to women heading vulnerable households.')">
+                    <div class="relative h-64 overflow-hidden bg-gray-300">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="Caregiver Livelihoods Program" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-trustBlue/90 via-trustBlue/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                            <span class="text-white text-xs font-bold flex items-center"><i data-lucide="maximize-2" class="w-4 h-4 mr-2 text-warmGold"></i> View Full Image & Details</span>
+                        </div>
+                        <span class="absolute top-4 left-4 bg-trustBlue text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Makueni County</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-2">
+                        <div>
+                            <span class="text-[11px] font-bold text-green-700 uppercase tracking-wider">Economic Inclusion</span>
+                            <h3 class="text-lg font-bold text-trustBlue group-hover:text-earthRed transition">Caregiver Livelihood Support</h3>
+                            <p class="text-xs text-gray-600 mt-1 leading-relaxed">Providing agricultural tools and vocational training to empower women caregivers.</p>
+                        </div>
+                        <span class="text-xs font-bold text-trustBlue pt-3 border-t border-gray-200 flex items-center">Explore Project <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENTS HUB (Inspired by events.alxafrica.com) -->
+    <section id="events" class="py-16 bg-gray-100 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-xs font-extrabold text-earthRed uppercase tracking-wider block mb-2">Community Engagement</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-trustBlue">WVFC Events & Gatherings</h2>
+                    <p class="text-gray-600 text-sm mt-1">Connect with our field teams, participate in workshops, or volunteer in person.</p>
+                </div>
+                <!-- Interactive Tab Control -->
+                <div class="mt-4 md:mt-0 flex bg-white p-1 rounded-xl shadow-sm border border-gray-200">
+                    <button id="event-tab-upcoming" onclick="switchEventTab('upcoming')" class="px-5 py-2 text-xs font-bold rounded-lg bg-trustBlue text-white shadow transition">Upcoming Events</button>
+                    <button id="event-tab-past" onclick="switchEventTab('past')" class="px-5 py-2 text-xs font-bold rounded-lg text-gray-500 hover:text-trustBlue transition">Past Drives</button>
+                </div>
+            </div>
+
+            <!-- Upcoming Events Panel -->
+            <div id="events-upcoming-panel" class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-md flex flex-col justify-between">
+                    <div class="p-8 space-y-6">
+                        <div class="flex justify-between items-start">
+                            <span class="bg-blue-50 text-trustBlue text-xs font-extrabold px-3 py-1 rounded-full uppercase">Education Drive</span>
+                            <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">Open for Volunteer RSVP</span>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-400 font-bold uppercase block mb-1">Kakamega County</span>
+                            <h3 class="text-2xl font-bold text-trustBlue leading-tight">Annual Back-To-School Learning Kit Distribution</h3>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 py-4 border-y border-gray-100 text-xs text-gray-600">
+                            <div class="flex items-center space-x-2">
+                                <i data-lucide="calendar" class="w-4 h-4 text-warmGold"></i>
+                                <span>October 18, 2026</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i data-lucide="clock" class="w-4 h-4 text-warmGold"></i>
+                                <span>09:00 AM – 03:00 PM EAT</span>
+                            </div>
+                            <div class="flex items-center space-x-2 col-span-2">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-earthRed"></i>
+                                <span>Kakamega Primary Hall & Field Office</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-600 leading-relaxed">Join over 30 local volunteers in sorting, packaging, and handing out academic materials and uniform sets to 200+ registered school children.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 border-t border-gray-100 flex items-center justify-between">
+                        <div class="text-xs">
+                            <span class="text-gray-400 block">Available Slots</span>
+                            <span class="font-bold text-trustBlue">12 Seats Remaining</span>
+                        </div>
+                        <button onclick="openRsvpModal('Annual Back-To-School Learning Kit Distribution', 'Kakamega County')" class="bg-earthRed hover:bg-red-700 text-white text-xs font-bold px-6 py-3 rounded-xl transition shadow">RSVP For Event</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-md flex flex-col justify-between">
+                    <div class="p-8 space-y-6">
+                        <div class="flex justify-between items-start">
+                            <span class="bg-yellow-50 text-yellow-800 text-xs font-extrabold px-3 py-1 rounded-full uppercase">ICT Workshop</span>
+                            <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">Open for Volunteer RSVP</span>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-400 font-bold uppercase block mb-1">Nairobi County</span>
+                            <h3 class="text-2xl font-bold text-trustBlue leading-tight">Youth Digital Literacy & Coding Orientation</h3>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 py-4 border-y border-gray-100 text-xs text-gray-600">
+                            <div class="flex items-center space-x-2">
+                                <i data-lucide="calendar" class="w-4 h-4 text-warmGold"></i>
+                                <span>November 05, 2026</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i data-lucide="clock" class="w-4 h-4 text-warmGold"></i>
+                                <span>10:00 AM – 02:00 PM EAT</span>
+                            </div>
+                            <div class="flex items-center space-x-2 col-span-2">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-earthRed"></i>
+                                <span>WVFC Headquarters (Ngong Nairobi)</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-600 leading-relaxed">A hands-on mentoring workshop where tech mentors introduce basic computer skills and web navigation to peri-urban high school graduates.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 border-t border-gray-100 flex items-center justify-between">
+                        <div class="text-xs">
+                            <span class="text-gray-400 block">Available Slots</span>
+                            <span class="font-bold text-trustBlue">8 Tech Mentors Needed</span>
+                        </div>
+                        <button onclick="openRsvpModal('Youth Digital Literacy & Coding Orientation', 'Nairobi HQ')" class="bg-trustBlue hover:bg-blue-900 text-white text-xs font-bold px-6 py-3 rounded-xl transition shadow">RSVP For Event</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Past Events Panel -->
+            <div id="events-past-panel" class="grid md:grid-cols-2 gap-8 hidden">
+                <div class="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-md p-8 space-y-4 opacity-85">
+                    <span class="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-full uppercase">Completed Drive • Kajiado</span>
+                    <h3 class="text-xl font-bold text-trustBlue">Clean Water Purification & Sanitation Outreach</h3>
+                    <p class="text-xs text-gray-500">Successfully completed on August 12, 2026. 450 hygiene packs distributed to pastoral families.</p>
+                </div>
+                <div class="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-md p-8 space-y-4 opacity-85">
+                    <span class="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-full uppercase">Completed Drive • Makueni</span>
+                    <h3 class="text-xl font-bold text-trustBlue">Caregiver Agricultural Starter Kit Distribution</h3>
+                    <p class="text-xs text-gray-500">Successfully completed on July 19, 2026. Empowered 80 women-headed households.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG HUB (Inspired by alxafrica.com/blog) -->
+    <section id="blog" class="py-16 bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="bg-earthRed/10 text-earthRed text-xs font-extrabold px-3.5 py-1 rounded-full uppercase tracking-wider inline-block mb-3">Field Dispatches & News</span>
+                <h1 class="text-4xl sm:text-5xl font-black text-trustBlue tracking-tight">Stories of Transformation</h1>
+                <p class="text-gray-600 text-base mt-3">Insights, community impact reports, and updates directly from our volunteer leaders across Kenya.</p>
+            </div>
+
+            <!-- Featured Story Hero Card -->
+            <div class="bg-gradient-to-r from-trustBlue to-blue-900 rounded-3xl overflow-hidden shadow-2xl mb-12 grid lg:grid-cols-2 text-white cursor-pointer group" onclick="openBlogArticle('featured')">
+                <div class="relative h-64 lg:h-auto bg-gray-300">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80" alt="Featured Article" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <span class="absolute top-4 left-4 bg-warmGold text-trustBlue text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">Featured Story</span>
+                </div>
+                <div class="p-8 lg:p-12 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <span class="text-xs text-blue-200 uppercase font-bold tracking-widest block">Education & OVC Support</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold leading-snug group-hover:text-warmGold transition">
+                            Bridging the Learning Gap: How School Subsidies Transformed 150+ Lives in Kakamega
+                        </h2>
+                        <p class="text-blue-100 text-sm leading-relaxed">
+                            Discover how our localized volunteer teams provided tuition subsidies, books, and uniforms to vulnerable children, keeping them in school despite economic hardships.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-white/10 text-xs text-blue-200">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-warmGold text-trustBlue font-bold flex items-center justify-center">JM</div>
+                            <span>Jacklyne M. Mbolozi</span>
+                        </div>
+                        <span class="font-bold underline text-warmGold flex items-center">Read Full Story <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Pills Filter -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10 border-b border-gray-200 pb-6">
+                <button onclick="filterBlog('all')" id="bfilter-all" class="bfilter-btn bg-trustBlue text-white text-xs font-bold px-5 py-2.5 rounded-full shadow-sm transition">All Articles</button>
+                <button onclick="filterBlog('education')" id="bfilter-education" class="bfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-5 py-2.5 rounded-full transition">Education</button>
+                <button onclick="filterBlog('ict')" id="bfilter-ict" class="bfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-5 py-2.5 rounded-full transition">ICT & Tech</button>
+                <button onclick="filterBlog('health')" id="bfilter-health" class="bfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-5 py-2.5 rounded-full transition">Health & Welfare</button>
+                <button onclick="filterBlog('economic')" id="bfilter-economic" class="bfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-5 py-2.5 rounded-full transition">Economic Inclusion</button>
+            </div>
+
+            <!-- Article Grid -->
+            <div class="grid md:grid-cols-3 gap-8" id="blog-grid">
+                <article class="blog-item ict bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col cursor-pointer group" onclick="openBlogArticle('nairobi-ict')">
+                    <div class="relative h-48 bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=800&q=80" alt="Tech training" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-trustBlue text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase">ICT Skills</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <span class="text-[11px] text-gray-400 font-bold uppercase block">August 28, 2026</span>
+                            <h3 class="font-bold text-trustBlue text-lg leading-snug group-hover:text-earthRed transition">Equipping Nairobi Youth with Workforce Digital Skills</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">Inside our 4-week computer basics bootcamp preparing high school graduates for modern remote work opportunities.</p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+                            <span class="font-semibold text-trustBlue group-hover:text-earthRed flex items-center">Read Article <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i></span>
+                            <span>4 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-item health bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col cursor-pointer group" onclick="openBlogArticle('kajiado-health')">
+                    <div class="relative h-48 bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Health camp" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-earthRed text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase">Health</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <span class="text-[11px] text-gray-400 font-bold uppercase block">August 12, 2026</span>
+                            <h3 class="font-bold text-trustBlue text-lg leading-snug group-hover:text-earthRed transition">Clean Water & Hygiene Outreach in Rural Kajiado</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">How field volunteers distributed water purification kits and conducted sanitation training for pastoral caregivers.</p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+                            <span class="font-semibold text-trustBlue group-hover:text-earthRed flex items-center">Read Article <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i></span>
+                            <span>3 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-item economic bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col cursor-pointer group" onclick="openBlogArticle('makueni-livelihoods')">
+                    <div class="relative h-48 bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="Women support" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-green-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase">Empowerment</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <span class="text-[11px] text-gray-400 font-bold uppercase block">July 19, 2026</span>
+                            <h3 class="font-bold text-trustBlue text-lg leading-snug group-hover:text-earthRed transition">Livelihood Toolkits for Caregivers in Makueni County</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">Supporting women caregivers with agricultural starter kits and vocational micro-training to build long-term economic stability.</p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+                            <span class="font-semibold text-trustBlue group-hover:text-earthRed flex items-center">Read Article <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i></span>
+                            <span>6 min read</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- Volunteer Onboarding Form -->
     <section id="volunteer" class="py-16 bg-white border-t border-gray-200">
         <div class="max-w-3xl mx-auto px-4">
@@ -206,12 +526,31 @@
             </div>
             <div>
                 <span class="text-sm font-bold text-white block mb-2">Headquarters</span>
+                <p class="text-xs leading-relaxed">Location: Ngong Nairobi, Kenya<br>Postal Address: P.O. Box 9721-00200 Nairobi</p>
             </div>
             <div>
                 <span class="text-sm font-bold text-white block mb-2">Contact Us</span>
+                <p class="text-xs leading-relaxed">Phone: +254 769 525 949<br>Email: Worldwidevoln@gmail.com</p>
             </div>
         </div>
     </footer>
+
+    <!-- DYNAMIC LIVE SITE SEARCH RESULT MODAL -->
+    <div id="searchResultsModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden z-50 flex items-start justify-center pt-20 p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 shadow-2xl relative max-h-[80vh] flex flex-col">
+            <div class="flex justify-between items-center border-b border-gray-100 pb-4 mb-4">
+                <div class="flex items-center space-x-2 text-trustBlue font-bold text-xs sm:text-sm">
+                    <i data-lucide="search" class="w-4 h-4 text-earthRed"></i>
+                    <span>Search Results</span>
+                </div>
+                <button onclick="closeSearchResults()" class="text-gray-400 hover:text-gray-600"><i data-lucide="x" class="w-5 h-5"></i></button>
+            </div>
+            
+            <div id="searchResultsContainer" class="overflow-y-auto space-y-3">
+                <!-- Search query results rendered here dynamically -->
+            </div>
+        </div>
+    </div>
 
     <!-- Dual Payment Modal (M-Pesa / Card) -->
     <div id="donateModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
@@ -253,9 +592,148 @@
         </div>
     </div>
 
+    <!-- EVENT RSVP MODAL -->
+    <div id="rsvpModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative">
+            <button onclick="closeRsvpModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i data-lucide="x"></i></button>
+            <span class="text-xs font-bold text-earthRed uppercase tracking-wider block mb-1">Volunteer Event RSVP</span>
+            <h3 id="rsvpModalTitle" class="text-xl font-extrabold text-trustBlue mb-1">Event Title</h3>
+            <p id="rsvpModalLocation" class="text-xs text-gray-500 mb-6">Location</p>
+            
+            <form onsubmit="handleRsvpSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Your Full Name</label>
+                    <input type="text" required placeholder="e.g. John Doe" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Phone Number (M-Pesa/WhatsApp)</label>
+                    <input type="tel" required placeholder="07XX XXX XXX" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:outline-none">
+                </div>
+                <button type="submit" class="w-full bg-trustBlue hover:bg-blue-900 text-white font-bold py-3 rounded-xl shadow transition">Confirm Seat Reservation</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FULL ARTICLE READ MODAL (ALX Africa Style) -->
+    <div id="blogArticleModal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden z-50 flex items-center justify-center p-2 sm:p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-4xl w-full my-8 overflow-hidden shadow-2xl relative max-h-[90vh] flex flex-col">
+            <div class="p-6 bg-trustBlue text-white flex justify-between items-center sticky top-0 z-10">
+                <span id="articleModalCategory" class="bg-warmGold text-trustBlue text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-wider">Education</span>
+                <button onclick="closeBlogArticle()" class="bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            
+            <div class="p-6 sm:p-10 overflow-y-auto space-y-6">
+                <div class="space-y-2 border-b border-gray-100 pb-4">
+                    <span id="articleModalDate" class="text-xs text-gray-400 font-bold uppercase">September 2026 • 5 min read</span>
+                    <h2 id="articleModalTitle" class="text-2xl sm:text-4xl font-extrabold text-trustBlue leading-tight">Article Title</h2>
+                    <div class="flex items-center space-x-3 pt-2">
+                        <div class="w-9 h-9 rounded-full bg-trustBlue text-warmGold font-bold flex items-center justify-center text-xs">JM</div>
+                        <div class="text-xs">
+                            <span id="articleModalAuthor" class="font-bold text-gray-800 block">Jacklyne M. Mbolozi</span>
+                            <span class="text-gray-400">Chairperson & Lead Advocate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h-72 bg-gray-200 rounded-2xl overflow-hidden">
+                    <img id="articleModalImg" src="" alt="Article Banner" class="w-full h-full object-cover">
+                </div>
+
+                <div id="articleModalContent" class="prose max-w-none text-gray-700 text-sm sm:text-base leading-relaxed space-y-4">
+                    <!-- Dynamic Body Text Injected via JS -->
+                </div>
+
+                <div class="pt-6 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <div class="flex items-center space-x-2 text-xs font-bold text-gray-500">
+                        <span>Share Article:</span>
+                        <button onclick="alert('Article link copied to clipboard!')" class="bg-gray-100 p-2 rounded-full hover:bg-gray-200"><i data-lucide="share-2" class="w-4 h-4 text-trustBlue"></i></button>
+                    </div>
+                    <button onclick="closeBlogArticle()" class="bg-trustBlue hover:bg-blue-900 text-white font-bold text-xs px-6 py-2.5 rounded-full transition">Close Article</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX MODAL (Standard Group Gallery Style) -->
+    <div id="galleryModal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl relative">
+            <button onclick="closeLightbox()" class="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full hover:bg-black transition z-10">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="h-80 bg-gray-900 relative">
+                <img id="modalImg" src="" alt="Modal Image" class="w-full h-full object-cover">
+            </div>
+            <div class="p-8 space-y-3">
+                <span id="modalMeta" class="text-xs font-bold text-earthRed uppercase tracking-wider">Category & Location</span>
+                <h3 id="modalTitle" class="text-2xl font-black text-trustBlue">Project Title</h3>
+                <p id="modalDesc" class="text-sm text-gray-600 leading-relaxed">Detailed project description goes here...</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Interactive JavaScript Logic -->
     <script>
         lucide.createIcons();
+
+        // Articles Data Store
+        const blogArticles = {
+            featured: {
+                category: 'Education & OVC Support',
+                title: 'Bridging the Learning Gap: How School Subsidies Transformed 150+ Lives in Kakamega',
+                date: 'September 2026 • 5 min read',
+                author: 'Jacklyne M. Mbolozi',
+                img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80',
+                content: `<p class="text-lg font-serif italic text-trustBlue border-l-4 border-warmGold pl-4">In many rural communities across Kakamega County, the barrier to educational continuity isn't a lack of desire—it is the acute financial burden of school fees, uniform requirements, and basic learning materials.</p>
+                <p>Through our 2026 Education Access Initiative, Worldwide Volunteers for Change deployed field volunteers directly to local primary and secondary institutions to identify orphans and vulnerable children (OVCs) at risk of dropping out.</p>
+                <p>Over 150 students received full tuition support packages, complete uniform sets, and essential textbooks. By partnering directly with school heads and community caregivers, we ensured 100% retention rate for supported students across the academic term.</p>
+                <blockquote class="bg-gray-50 border-l-4 border-earthRed p-4 my-4 font-bold text-gray-800">"When a child gets a uniform and books, their self-esteem transforms overnight. They stop feeling out of place and start focusing on their future." — Volunteer Coordinator, Kakamega</blockquote>`
+            },
+            'nairobi-ict': {
+                category: 'ICT & Tech Skills',
+                title: 'Equipping Nairobi Youth with Workforce Digital Skills',
+                date: 'August 28, 2026 • 4 min read',
+                author: 'WVFC Tech Team',
+                img: 'https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=800&q=80',
+                content: `<p class="text-lg font-serif italic text-trustBlue border-l-4 border-warmGold pl-4">Digital literacy is no longer a luxury—it is the baseline requirement for modern economic inclusion.</p>
+                <p>At our Nairobi Ngong Headquarters, Worldwide Volunteers for Change hosted a 4-week computer basics bootcamp targeting peri-urban high school graduates and unemployed youth.</p>
+                <p>Participants received practical training in document processing, basic web navigation, digital communication tools, and online freelance workflow platforms. 85% of graduates reported increased confidence in applying for digital entry-level roles.</p>`
+            },
+            'kajiado-health': {
+                category: 'Health & Sanitation',
+                title: 'Clean Water & Hygiene Outreach in Rural Kajiado',
+                date: 'August 12, 2026 • 3 min read',
+                author: 'Field Ops Unit',
+                img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+                content: `<p class="text-lg font-serif italic text-trustBlue border-l-4 border-warmGold pl-4">Access to clean water and health education forms the foundation of strong community resilience.</p>
+                <p>Our healthcare volunteer unit visited pastoral communities in Kajiado County, providing water purification tablets, hygiene kits, and interactive public health workshops.</p>
+                <p>Specialized sessions focused on reproductive health education and preventative hygiene standards, reaching over 450 caregivers and young mothers.</p>`
+            },
+            'makueni-livelihoods': {
+                category: 'Economic Inclusion',
+                title: 'Livelihood Toolkits for Caregivers in Makueni County',
+                date: 'July 19, 2026 • 6 min read',
+                author: 'Jacklyne M. Mbolozi',
+                img: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80',
+                content: `<p class="text-lg font-serif italic text-trustBlue border-l-4 border-warmGold pl-4">Empowering women caregivers directly improves household stability for vulnerable children.</p>
+                <p>In Makueni County, our Economic Empowerment team distributed agricultural starter kits, poultry tools, and vocational micro-training packages to women heading low-income households.</p>
+                <p>By establishing micro-livelihoods, participating caregivers generated independent income streams to support household nutrition and local school expenses.</p>`
+            }
+        };
+
+        // Site Search Index
+        const siteSearchIndex = [
+            { type: 'Article', title: 'Bridging the Learning Gap in Kakamega', category: 'Education', action: () => openBlogArticle('featured') },
+            { type: 'Article', title: 'Equipping Nairobi Youth with Workforce Digital Skills', category: 'ICT Skills', action: () => openBlogArticle('nairobi-ict') },
+            { type: 'Article', title: 'Clean Water & Hygiene Outreach in Kajiado', category: 'Health', action: () => openBlogArticle('kajiado-health') },
+            { type: 'Article', title: 'Livelihood Toolkits for Caregivers in Makueni', category: 'Economic', action: () => openBlogArticle('makueni-livelihoods') },
+            { type: 'County', title: 'Nairobi County HQ', category: 'Urban ICT & Education', action: () => { window.location.href='#counties'; selectCounty('nairobi'); } },
+            { type: 'County', title: 'Kajiado County Branch', category: 'Health & Water', action: () => { window.location.href='#counties'; selectCounty('kajiado'); } },
+            { type: 'County', title: 'Kakamega County Branch', category: 'School Fee Subsidies', action: () => { window.location.href='#counties'; selectCounty('kakamega'); } },
+            { type: 'County', title: 'Makueni County Branch', category: 'Women Economic Inclusion', action: () => { window.location.href='#counties'; selectCounty('makueni'); } },
+            { type: 'Event', title: 'Annual Back-To-School Learning Kit Distribution', category: 'Kakamega Event', action: () => { window.location.href='#events'; openRsvpModal('Annual Back-To-School Kit Distribution', 'Kakamega'); } }
+        ];
 
         // County Data Store
         const counties = {
@@ -296,6 +774,47 @@
             }
         };
 
+        function handleSiteSearch(query) {
+            const container = document.getElementById('searchResultsContainer');
+            const modal = document.getElementById('searchResultsModal');
+
+            if (!query.trim()) {
+                modal.classList.add('hidden');
+                return;
+            }
+
+            const results = siteSearchIndex.filter(item => 
+                item.title.toLowerCase().includes(query.toLowerCase()) || 
+                item.category.toLowerCase().includes(query.toLowerCase())
+            );
+
+            if (results.length === 0) {
+                container.innerHTML = `<div class="p-6 text-center text-xs text-gray-500">No matching projects or articles found for "${query}".</div>`;
+            } else {
+                container.innerHTML = results.map((item, idx) => `
+                    <div onclick="executeSearchResult(${idx})" class="p-3 bg-gray-50 hover:bg-blue-50 rounded-xl cursor-pointer border border-gray-100 transition flex justify-between items-center">
+                        <div>
+                            <span class="text-[10px] font-bold text-earthRed uppercase">${item.type} • ${item.category}</span>
+                            <h4 class="text-xs font-bold text-trustBlue">${item.title}</h4>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+                    </div>
+                `).join('');
+                lucide.createIcons();
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function executeSearchResult(idx) {
+            closeSearchResults();
+            siteSearchIndex[idx].action();
+        }
+
+        function closeSearchResults() {
+            document.getElementById('searchResultsModal').classList.add('hidden');
+        }
+
         function selectCounty(key) {
             const data = counties[key];
             document.getElementById('county-title').innerText = data.title;
@@ -308,20 +827,6 @@
                 btn.className = 'county-btn bg-white text-gray-700 hover:bg-gray-200 px-5 py-2.5 rounded-full font-bold text-sm shadow';
             });
             document.getElementById(`btn-${key}`).className = 'county-btn bg-trustBlue text-white px-5 py-2.5 rounded-full font-bold text-sm shadow';
-        }
-
-        function updateCalculator(val) {
-            document.getElementById('calc-amount').innerText = `KES ${parseInt(val).toLocaleString()}`;
-            const impact = document.getElementById('calc-impact');
-            if(val < 1000) {
-                impact.innerText = "Provides basic stationery kits (exercise books and pens) for 2 students.";
-            } else if(val < 3000) {
-                impact.innerText = "Provides 1 child with a complete school kit (Textbooks, exercise books, stationery, and uniform support).";
-            } else if(val < 6000) {
-                impact.innerText = "Covers partial term school fees and learning materials for an underprivileged OVC student.";
-            } else {
-                impact.innerText = "Fully equips a local community digital learning corner with solar/tech support and materials for 10+ kids.";
-            }
         }
 
         function toggleDonateModal() {
@@ -345,6 +850,107 @@
                 cardPanel.classList.remove('hidden');
                 mpesaPanel.classList.add('hidden');
             }
+        }
+
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const btns = document.querySelectorAll('.gfilter-btn');
+
+            btns.forEach(btn => {
+                btn.className = 'gfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-6 py-2.5 rounded-full transition';
+            });
+            document.getElementById(`gfilter-${category}`).className = 'gfilter-btn bg-trustBlue text-white text-xs font-bold px-6 py-2.5 rounded-full shadow-sm transition';
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function filterBlog(category) {
+            const items = document.querySelectorAll('.blog-item');
+            const btns = document.querySelectorAll('.bfilter-btn');
+
+            btns.forEach(btn => {
+                btn.className = 'bfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-5 py-2.5 rounded-full transition';
+            });
+            document.getElementById(`bfilter-${category}`).className = 'bfilter-btn bg-trustBlue text-white text-xs font-bold px-5 py-2.5 rounded-full shadow-sm transition';
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function switchEventTab(type) {
+            const upcomingBtn = document.getElementById('event-tab-upcoming');
+            const pastBtn = document.getElementById('event-tab-past');
+            const upcomingPanel = document.getElementById('events-upcoming-panel');
+            const pastPanel = document.getElementById('events-past-panel');
+
+            if (type === 'upcoming') {
+                upcomingBtn.className = "px-5 py-2 text-xs font-bold rounded-lg bg-trustBlue text-white shadow transition";
+                pastBtn.className = "px-5 py-2 text-xs font-bold rounded-lg text-gray-500 hover:text-trustBlue transition";
+                upcomingPanel.classList.remove('hidden');
+                pastPanel.classList.add('hidden');
+            } else {
+                pastBtn.className = "px-5 py-2 text-xs font-bold rounded-lg bg-trustBlue text-white shadow transition";
+                upcomingBtn.className = "px-5 py-2 text-xs font-bold rounded-lg text-gray-500 hover:text-trustBlue transition";
+                pastPanel.classList.remove('hidden');
+                upcomingPanel.classList.add('hidden');
+            }
+        }
+
+        function openBlogArticle(key) {
+            const article = blogArticles[key];
+            if (!article) return;
+
+            document.getElementById('articleModalCategory').innerText = article.category;
+            document.getElementById('articleModalTitle').innerText = article.title;
+            document.getElementById('articleModalDate').innerText = article.date;
+            document.getElementById('articleModalAuthor').innerText = article.author;
+            document.getElementById('articleModalImg').src = article.img;
+            document.getElementById('articleModalContent').innerHTML = article.content;
+
+            document.getElementById('blogArticleModal').classList.remove('hidden');
+        }
+
+        function closeBlogArticle() {
+            document.getElementById('blogArticleModal').classList.add('hidden');
+        }
+
+        function openRsvpModal(title, location) {
+            document.getElementById('rsvpModalTitle').innerText = title;
+            document.getElementById('rsvpModalLocation').innerText = location;
+            document.getElementById('rsvpModal').classList.remove('hidden');
+        }
+
+        function closeRsvpModal() {
+            document.getElementById('rsvpModal').classList.add('hidden');
+        }
+
+        function handleRsvpSubmit(e) {
+            e.preventDefault();
+            alert('Your RSVP has been confirmed! Our field coordinator will send event joining details to your phone shortly.');
+            closeRsvpModal();
+        }
+
+        function openLightbox(imgUrl, title, meta, desc) {
+            document.getElementById('modalImg').src = imgUrl;
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalMeta').innerText = meta;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('galleryModal').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('galleryModal').classList.add('hidden');
         }
 
         function handleVolunteerSubmit(e) {
