@@ -109,7 +109,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-12">
                 <span class="text-xs font-bold text-earthRed uppercase tracking-wider block mb-1">Guiding Principles</span>
-                <h2 class="text-3xl font-extrabold text-trustBlue">Mission, Vision & Strategic Goals</h2>
+                <h2 class="text-3xl font-extrabold text-trustBlue">Our Mission, Vision & Strategic Goals</h2>
                 <p class="text-gray-600 mt-2 text-sm">Building inclusive community frameworks for sustainable grassroots transformation.</p>
             </div>
 
@@ -626,18 +626,90 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12 px-4 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-            <div>
-                <span class="text-lg font-bold text-white block mb-2">Worldwide Volunteers for Change</span>
-                <p class="text-xs text-gray-400 leading-relaxed">Registered Non-Governmental Organization in Kenya. Dedicated to transforming lives through education, health, youth & women empowerment, and economic opportunities.</p>
+    <!-- ALX-INSPIRED MODERN MEGA FOOTER -->
+    <footer class="bg-gray-950 text-gray-300 pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Footer Top CTA / Newsletter Banner -->
+            <div class="bg-gradient-to-r from-trustBlue to-blue-900 rounded-3xl p-8 md:p-12 mb-16 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8 text-white">
+                <div class="max-w-xl space-y-2 text-center lg:text-left">
+                    <span class="bg-warmGold text-trustBlue text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-widest inline-block">Stay Connected</span>
+                    <h3 class="text-2xl sm:text-3xl font-black">Join the Movement for Change</h3>
+                    <p class="text-xs sm:text-sm text-blue-100 leading-relaxed">Subscribe to receive monthly dispatches, field proof impact metrics, and volunteer drive announcements directly in your inbox.</p>
+                </div>
+                <form onsubmit="handleNewsletterSubmit(event)" class="w-full lg:w-auto flex flex-col sm:flex-row gap-2 max-w-md">
+                    <input type="email" required placeholder="Enter your email address" class="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-blue-200 text-xs focus:outline-none focus:ring-2 focus:ring-warmGold flex-1">
+                    <button type="submit" class="bg-warmGold hover:bg-yellow-400 text-trustBlue font-extrabold text-xs px-6 py-3 rounded-xl transition shadow-lg whitespace-nowrap">Subscribe Now</button>
+                </form>
             </div>
-            <div>
-                <span class="text-sm font-bold text-white block mb-2">Headquarters</span>
+
+            <!-- Footer Columns Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-gray-800">
+                <!-- Column 1: Brand & Identity -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-trustBlue text-warmGold rounded-full flex items-center justify-center font-bold text-xl shadow">WV</div>
+                        <div>
+                            <span class="block text-base font-extrabold text-white leading-tight tracking-wide">WORLDWIDE VOLUNTEERS</span>
+                            <span class="block text-[10px] font-bold text-earthRed tracking-widest uppercase">FOR CHANGE</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed pr-4">
+                        A registered Non-Governmental Organization in Kenya dedicated to catalyzing grassroots transformation across education, youth and women empowerment, healthcare access, and digital inclusion.
+                    </p>
+                    <div class="flex items-center space-x-3 pt-2">
+                        <a href="https://facebook.com" target="_blank" class="w-8 h-8 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-warmGold transition"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                        <a href="https://twitter.com" target="_blank" class="w-8 h-8 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-warmGold transition"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="w-8 h-8 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-warmGold transition"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="https://linkedin.com" target="_blank" class="w-8 h-8 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-warmGold transition"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Strategic Pillars -->
+                <div class="space-y-3">
+                    <span class="text-xs font-bold uppercase tracking-wider text-white block">Impact Pillars</span>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><a href="#pillars" onclick="viewPillarProjects('education')" class="hover:text-warmGold transition">Education Access</a></li>
+                        <li><a href="#pillars" onclick="viewPillarProjects('health')" class="hover:text-warmGold transition">Health & Sanitation</a></li>
+                        <li><a href="#pillars" onclick="viewPillarProjects('ict')" class="hover:text-warmGold transition">ICT & Digital Skills</a></li>
+                        <li><a href="#pillars" onclick="viewPillarProjects('empowerment')" class="hover:text-warmGold transition">Youth & Women Empowerment</a></li>
+                        <li><a href="#pillars" onclick="viewPillarProjects('economic')" class="hover:text-warmGold transition">Economic Inclusion</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Regional Hubs -->
+                <div class="space-y-3">
+                    <span class="text-xs font-bold uppercase tracking-wider text-white block">Operating Hubs</span>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><a href="#counties" onclick="selectCounty('nairobi')" class="hover:text-warmGold transition">Nairobi County HQ</a></li>
+                        <li><a href="#counties" onclick="selectCounty('kajiado')" class="hover:text-warmGold transition">Kajiado Outreach</a></li>
+                        <li><a href="#counties" onclick="selectCounty('kakamega')" class="hover:text-warmGold transition">Kakamega Branch</a></li>
+                        <li><a href="#counties" onclick="selectCounty('makueni')" class="hover:text-warmGold transition">Makueni Hub</a></li>
+                        <li><a href="#counties" onclick="selectCounty('kiambu')" class="hover:text-warmGold transition">Kiambu Skills Center</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Headquarters & Contact -->
+                <div class="space-y-3">
+                    <span class="text-xs font-bold uppercase tracking-wider text-white block">Contact Us</span>
+                    <div class="space-y-2 text-xs text-gray-400 leading-relaxed">
+                        <p class="flex items-start"><i data-lucide="map-pin" class="w-3.5 h-3.5 mr-2 text-warmGold shrink-0 mt-0.5"></i> Ngong Nairobi, Kenya</p>
+                        <p class="flex items-center"><i data-lucide="mail" class="w-3.5 h-3.5 mr-2 text-warmGold shrink-0"></i> Worldwidevoln@gmail.com</p>
+                        <p class="flex items-center"><i data-lucide="phone" class="w-3.5 h-3.5 mr-2 text-warmGold shrink-0"></i> +254 769 525 949</p>
+                        <p class="flex items-start"><i data-lucide="building-2" class="w-3.5 h-3.5 mr-2 text-warmGold shrink-0 mt-0.5"></i> P.O. Box 9721-00200 Nairobi</p>
+                    </div>
+                </div>
             </div>
-            <div>
-                <span class="text-sm font-bold text-white block mb-2">Contact Us</span>
+
+            <!-- Footer Bottom Legal & Copyright Bar -->
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <div>
+                    © 2026 Worldwide Volunteers for Change. All Rights Reserved. Registered NGO in Kenya.
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="#about" class="hover:text-gray-300 transition">Privacy Policy</a>
+                    <a href="#about" class="hover:text-gray-300 transition">Terms of Service</a>
+                    <a href="#about" class="hover:text-gray-300 transition">Volunteer Charter</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -1074,6 +1146,11 @@
         function handleVolunteerSubmit(e) {
             e.preventDefault();
             alert('Thank you for applying! Our volunteer coordination team in Nairobi will contact you shortly.');
+        }
+
+        function handleNewsletterSubmit(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing to the WVFC newsletter! You will now receive monthly impact updates.');
         }
     </script>
 </body>
