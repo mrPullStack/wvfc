@@ -29,7 +29,7 @@
     <!-- Top Announcement Bar -->
     <div class="bg-trustBlue text-white text-xs sm:text-sm py-2 px-4 flex justify-between items-center">
         <div class="flex items-center space-x-4 text-[11px] sm:text-xs">
-            <span class="flex items-center"><i class="fa-solid fa-location-dot mr-1.5" style="color: rgb(255, 212, 59);"></i> Ngong Nairobi, Kenya</span>
+            <span class="flex items-center"><i class="fa-solid fa-location-dot mr-1.5" style="color: rgb(255, 212, 59);"></i> Ngong Kajiado, Kenya</span>
             <span class="hidden md:flex items-center"><i class="fa-solid fa-phone mr-1.5" style="color: rgb(255, 212, 59);"></i> +254 769 525 949</span>
         </div>
         <div class="flex items-center space-x-3 text-[11px] sm:text-xs font-semibold">
@@ -301,26 +301,26 @@
                 <p class="text-gray-600 text-xs sm:text-sm mt-2">Select a county to inspect localized outreach and field projects.</p>
             </div>
             <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8">
-                <button onclick="selectCounty('nairobi')" id="btn-nairobi" class="county-btn bg-trustBlue text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm shadow">Nairobi</button>
-                <button onclick="selectCounty('kajiado')" id="btn-kajiado" class="county-btn bg-white text-gray-700 hover:bg-gray-200 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm shadow">Kajiado</button>
+                <button onclick="selectCounty('kajiado')" id="btn-kajiado" class="county-btn bg-trustBlue text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm shadow">Kajiado (HQ)</button>
+                <button onclick="selectCounty('nairobi')" id="btn-nairobi" class="county-btn bg-white text-gray-700 hover:bg-gray-200 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm shadow">Nairobi</button>
                 <button onclick="selectCounty('kakamega')" id="btn-kakamega" class="county-btn bg-white text-gray-700 hover:bg-gray-200 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm shadow">Kakamega</button>
                 <button onclick="selectCounty('makueni')" id="btn-makueni" class="county-btn bg-white text-gray-700 hover:bg-gray-200 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm shadow">Makueni</button>
                 <button onclick="selectCounty('kiambu')" id="btn-kiambu" class="county-btn bg-white text-gray-700 hover:bg-gray-200 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm shadow">Kiambu</button>
             </div>
             <div id="county-card" class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-200 max-w-3xl mx-auto">
                 <div class="flex items-center space-x-2 text-earthRed font-bold text-xs sm:text-sm uppercase mb-2">
-                    <i class="fa-solid fa-location-dot"></i> <span id="county-title">Nairobi County HQ</span>
+                    <i class="fa-solid fa-location-dot"></i> <span id="county-title">Kajiado County HQ</span>
                 </div>
-                <h3 id="county-heading" class="text-xl sm:text-2xl font-bold text-trustBlue mb-3">Urban ICT & Education Hub</h3>
-                <p id="county-desc" class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-6">Central hub managing tech literacy programs, digital volunteer coordination, tree planting drives, and emergency relief distribution for vulnerable urban settlements.</p>
+                <h3 id="county-heading" class="text-xl sm:text-2xl font-bold text-trustBlue mb-3">Water, Sanitation & Climate Adaptation HQ</h3>
+                <p id="county-desc" class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-6">Central headquarters managing clean water access, tree planting drives, environmental clubs, healthcare outreach, and volunteer operations across Kenya.</p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-gray-100 pt-4">
                     <div>
                         <span class="block text-[10px] sm:text-xs text-gray-400 font-bold uppercase">Focus Area</span>
-                        <span id="county-focus" class="text-xs sm:text-sm font-semibold text-trustBlue">ICT & School Supplies</span>
+                        <span id="county-focus" class="text-xs sm:text-sm font-semibold text-trustBlue">Climate Action & Health</span>
                     </div>
                     <div>
                         <span class="block text-[10px] sm:text-xs text-gray-400 font-bold uppercase">Primary Beneficiaries</span>
-                        <span id="county-target" class="text-xs sm:text-sm font-semibold text-trustBlue">Youth & Street Children</span>
+                        <span id="county-target" class="text-xs sm:text-sm font-semibold text-trustBlue">Caregivers & School Youth</span>
                     </div>
                 </div>
             </div>
@@ -375,7 +375,7 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-trustBlue/90 via-trustBlue/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
                             <span class="text-white text-xs font-bold flex items-center"><i class="fa-solid fa-expand mr-2 text-warmGold"></i> View Full Image & Details</span>
                         </div>
-                        <span class="absolute top-4 left-4 bg-emerald-700 text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Kajiado County</span>
+                        <span class="absolute top-4 left-4 bg-emerald-700 text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Kajiado HQ</span>
                     </div>
                     <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-2">
                         <div>
@@ -393,7 +393,7 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-trustBlue/90 via-trustBlue/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
                             <span class="text-white text-xs font-bold flex items-center"><i class="fa-solid fa-expand mr-2 text-warmGold"></i> View Full Image & Details</span>
                         </div>
-                        <span class="absolute top-4 left-4 bg-trustBlue text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Nairobi HQ</span>
+                        <span class="absolute top-4 left-4 bg-trustBlue text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Nairobi Branch</span>
                     </div>
                     <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-2">
                         <div>
@@ -429,7 +429,7 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-trustBlue/90 via-trustBlue/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
                             <span class="text-white text-xs font-bold flex items-center"><i class="fa-solid fa-expand mr-2 text-warmGold"></i> View Full Image & Details</span>
                         </div>
-                        <span class="absolute top-4 left-4 bg-trustBlue text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Kajiado County</span>
+                        <span class="absolute top-4 left-4 bg-trustBlue text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Kajiado HQ</span>
                     </div>
                     <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-2">
                         <div>
@@ -738,7 +738,7 @@
         <div class="max-w-3xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-8 sm:mb-10">
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-trustBlue">Join As A Volunteer</h2>
-                <p class="text-gray-600 text-xs sm:text-sm mt-2">Sign up to support field projects across Nairobi, Kajiado, Kakamega, Makueni, or Kiambu.</p>
+                <p class="text-gray-600 text-xs sm:text-sm mt-2">Sign up to support field projects across Kajiado (HQ), Nairobi, Kakamega, Makueni, or Kiambu.</p>
             </div>
             <form onsubmit="handleVolunteerSubmit(event)" class="space-y-4">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -755,8 +755,8 @@
                     <div>
                         <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Preferred County</label>
                         <select class="w-full px-4 py-2.5 text-xs sm:text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-trustBlue focus:outline-none">
+                            <option>Kajiado (HQ)</option>
                             <option>Nairobi</option>
-                            <option>Kajiado</option>
                             <option>Kakamega</option>
                             <option>Makueni</option>
                             <option>Kiambu</option>
@@ -835,8 +835,8 @@
                 <div class="space-y-3">
                     <span class="text-xs font-bold uppercase tracking-wider text-white block">Operating Hubs</span>
                     <ul class="space-y-2 text-xs text-gray-400">
-                        <li><a href="#counties" onclick="selectCounty('nairobi')" class="hover:text-warmGold transition">Nairobi County HQ</a></li>
-                        <li><a href="#counties" onclick="selectCounty('kajiado')" class="hover:text-warmGold transition">Kajiado Outreach</a></li>
+                        <li><a href="#counties" onclick="selectCounty('kajiado')" class="hover:text-warmGold transition">Kajiado County HQ</a></li>
+                        <li><a href="#counties" onclick="selectCounty('nairobi')" class="hover:text-warmGold transition">Nairobi Branch</a></li>
                         <li><a href="#counties" onclick="selectCounty('kakamega')" class="hover:text-warmGold transition">Kakamega Branch</a></li>
                         <li><a href="#counties" onclick="selectCounty('makueni')" class="hover:text-warmGold transition">Makueni Hub</a></li>
                         <li><a href="#counties" onclick="selectCounty('kiambu')" class="hover:text-warmGold transition">Kiambu Skills Center</a></li>
@@ -847,10 +847,10 @@
                 <div class="space-y-3">
                     <span class="text-xs font-bold uppercase tracking-wider text-white block">Contact Us</span>
                     <div class="space-y-2 text-xs text-gray-400 leading-relaxed">
-                        <p class="flex items-start"><i class="fa-solid fa-location-dot w-3.5 h-3.5 mr-2" style="color: rgb(255, 212, 59);"></i> Ngong Nairobi, Kenya</p>
+                        <p class="flex items-start"><i class="fa-solid fa-location-dot w-3.5 h-3.5 mr-2" style="color: rgb(255, 212, 59);"></i> Ngong Kajiado, Kenya</p>
                         <p class="flex items-center"><i class="fa-solid fa-envelope w-3.5 h-3.5 mr-2" style="color: rgb(255, 212, 59);"></i> worldwidevoln@gmail.com</p>
                         <p class="flex items-center"><i class="fa-solid fa-phone w-3.5 h-3.5 mr-2" style="color: rgb(255, 212, 59);"></i> +254 769 525 949</p>
-                        <p class="flex items-start"><i class="fa-solid fa-building-ngo w-3.5 h-3.5 mr-2" style="color: rgb(255, 212, 59);"></i> P.O. Box 9721-00200 Nairobi</p>
+                        <p class="flex items-start"><i class="fa-solid fa-building-ngo w-3.5 h-3.5 mr-2" style="color: rgb(255, 212, 59);"></i> P.O. Box 9721-00200 Kajiado</p>
                     </div>
                 </div>
             </div>
@@ -1078,7 +1078,7 @@
                 author: 'WVFC Tech Team',
                 img: '#',
                 content: `<p class="text-base sm:text-lg font-serif italic text-trustBlue border-l-4 border-warmGold pl-4">Digital literacy is no longer a luxury—it is the baseline requirement for modern economic inclusion.</p>
-                <p>At our Nairobi Ngong Headquarters, Worldwide Volunteers for Change hosted a 4-week computer basics bootcamp targeting peri-urban high school graduates and unemployed youth.</p>
+                <p>At our Kajiado Ngong Headquarters, Worldwide Volunteers for Change hosted a 4-week computer basics bootcamp targeting peri-urban high school graduates and unemployed youth.</p>
                 <p>Participants received practical training in document processing, basic web navigation, digital communication tools, and online freelance workflow platforms. 85% of graduates reported increased confidence in applying for digital entry-level roles.</p>`
             },
             'kajiado-health': {
@@ -1112,8 +1112,8 @@
             { type: 'Article', title: 'Equipping Nairobi Youth with Workforce Digital Skills', category: 'ICT Skills', action: () => openBlogArticle('nairobi-ict') },
             { type: 'Article', title: 'Clean Water & Hygiene Outreach in Kajiado', category: 'Health', action: () => openBlogArticle('kajiado-health') },
             { type: 'Article', title: 'Livelihood Toolkits for Caregivers in Makueni', category: 'Economic', action: () => openBlogArticle('makueni-livelihoods') },
-            { type: 'County', title: 'Nairobi County HQ', category: 'Urban ICT & Education', action: () => { window.location.href='#counties'; selectCounty('nairobi'); } },
-            { type: 'County', title: 'Kajiado County Branch', category: 'Climate & Health Outreach', action: () => { window.location.href='#counties'; selectCounty('kajiado'); } },
+            { type: 'County', title: 'Kajiado County HQ', category: 'Climate & Health Outreach', action: () => { window.location.href='#counties'; selectCounty('kajiado'); } },
+            { type: 'County', title: 'Nairobi County Branch', category: 'Urban ICT & Education', action: () => { window.location.href='#counties'; selectCounty('nairobi'); } },
             { type: 'County', title: 'Kakamega County Branch', category: 'School Fee Subsidies', action: () => { window.location.href='#counties'; selectCounty('kakamega'); } },
             { type: 'County', title: 'Makueni County Branch', category: 'Women Economic Inclusion', action: () => { window.location.href='#counties'; selectCounty('makueni'); } },
             { type: 'Event', title: 'Community Reforestation & Seedling Planting Drive', category: 'Climate Event', action: () => { window.location.href='#events'; openRsvpModal('Community Reforestation & Seedling Planting Drive', 'Kajiado County'); } },
@@ -1122,19 +1122,19 @@
 
         // County Data Store
         const counties = {
-            nairobi: {
-                title: 'Nairobi County HQ',
-                heading: 'Urban ICT & Education Hub',
-                desc: 'Central hub managing tech literacy programs, digital volunteer coordination, tree planting drives, and emergency relief distribution for vulnerable urban settlements.',
-                focus: 'ICT & School Supplies',
-                target: 'Youth & Street Children'
-            },
             kajiado: {
-                title: 'Kajiado County Branch',
-                heading: 'Water, Sanitation & Climate Adaptation',
-                desc: 'Focusing on clean water access, tree planting drives, environmental clubs, and healthcare outreach for peri-urban and rural pastoral communities.',
+                title: 'Kajiado County HQ',
+                heading: 'Water, Sanitation & Climate Adaptation HQ',
+                desc: 'Central headquarters managing clean water access, tree planting drives, environmental clubs, healthcare outreach, and volunteer operations across Kenya.',
                 focus: 'Climate Action & Health',
                 target: 'Caregivers & School Youth'
+            },
+            nairobi: {
+                title: 'Nairobi County Branch',
+                heading: 'Urban ICT & Education Hub',
+                desc: 'Branch hub managing tech literacy programs, digital volunteer coordination, tree planting drives, and emergency relief distribution for vulnerable urban settlements.',
+                focus: 'ICT & School Supplies',
+                target: 'Youth & Street Children'
             },
             kakamega: {
                 title: 'Kakamega County Branch',
@@ -1350,7 +1350,7 @@
 
         function handleVolunteerSubmit(e) {
             e.preventDefault();
-            alert('Thank you for applying! Our volunteer coordination team in Nairobi will contact you shortly.');
+            alert('Thank you for applying! Our volunteer coordination team in Kajiado will contact you shortly.');
         }
 
         function handleNewsletterSubmit(e) {
