@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,37 +20,38 @@
             }
         }
     </script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- FontAwesome 6 Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://kit.fontawesome.com/bd23b55b8b.js" crossorigin="anonymous"></script>
 </head>
-<body class="bg-offWhite text-gray-800 font-sans antialiased">
+<body class="bg-offWhite text-gray-800 font-sans antialiased overflow-x-hidden">
 
     <!-- Top Announcement Bar -->
     <div class="bg-trustBlue text-white text-xs sm:text-sm py-2 px-4 flex justify-between items-center">
-        <div class="flex items-center space-x-4">
-            <span class="flex items-center"><i class="fa-solid fa-location-dot" style="color: rgb(255, 212, 59);"></i> Ngong Nairobi, Kenya</span>
-            <span class="hidden md:flex items-center"><i class="fa-solid fa-phone" style="color: rgb(255, 212, 59);"></i> +254 769 525 949</span>
+        <div class="flex items-center space-x-4 text-[11px] sm:text-xs">
+            <span class="flex items-center"><i class="fa-solid fa-location-dot mr-1.5" style="color: rgb(255, 212, 59);"></i> Ngong Nairobi, Kenya</span>
+            <span class="hidden md:flex items-center"><i class="fa-solid fa-phone mr-1.5" style="color: rgb(255, 212, 59);"></i> +254 769 525 949</span>
         </div>
-        <div class="flex items-center space-x-3">
-            <a href="#volunteer" class="hover:underline">Join as Volunteer</a>
+        <div class="flex items-center space-x-3 text-[11px] sm:text-xs font-semibold">
+            <a href="#volunteer" class="hover:underline flex items-center"><i class="fa-solid fa-person-arrow-down-to-line mr-1.5" style="color: rgb(255, 212, 59);"></i> Join as Volunteer</a>
         </div>
     </div>
 
     <!-- Navigation Header -->
     <nav class="sticky top-0 z-40 bg-white shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
-            <div class="flex items-center space-x-3">
+            <a href="#" class="flex items-center space-x-3 shrink-0">
                 <div class="w-10 h-10 bg-trustBlue text-warmGold rounded-full flex items-center justify-center font-bold text-xl shadow">WV</div>
                 <div>
-                    <span class="block text-lg font-extrabold text-trustBlue leading-tight">WORLDWIDE VOLUNTEERS</span>
-                    <span class="block text-xs font-semibold text-earthRed tracking-widest uppercase">FOR CHANGE</span>
+                    <span class="block text-base sm:text-lg font-extrabold text-trustBlue leading-tight">WORLDWIDE VOLUNTEERS</span>
+                    <span class="block text-[10px] sm:text-xs font-semibold text-earthRed tracking-widest uppercase">FOR CHANGE</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- Global Navigation Links -->
-            <div class="hidden lg:flex space-x-6 font-medium text-gray-700 text-sm">
-                <a href="#mission" class="hover:text-trustBlue transition">About Us</a>
+            <!-- Global Navigation Links (Desktop) -->
+            <div class="hidden xl:flex space-x-6 font-medium text-gray-700 text-sm">
+                <a href="#about" class="hover:text-trustBlue transition">About Us</a>
+                <a href="#mission" class="hover:text-trustBlue transition">Mission & Vision</a>
                 <a href="#pillars" class="hover:text-trustBlue transition">Our Pillars</a>
                 <a href="#counties" class="hover:text-trustBlue transition">Where We Work</a>
                 <a href="#gallery" class="hover:text-trustBlue transition">Gallery</a>
@@ -58,46 +59,84 @@
                 <a href="#blog" class="hover:text-trustBlue transition">Blog</a>
             </div>
 
-            <!-- Sleek & Compact Navigation Action Bar -->
-            <div class="flex items-center space-x-2 sm:space-x-3">
-                <!-- Sleek Micro Search Bar -->
-                <div class="relative">
-                    <input type="text" id="siteSearchInput" onkeyup="handleSiteSearch(this.value)" placeholder="Search..." class="w-24 sm:w-28 md:w-36 focus:w-44 bg-gray-100 text-[11px] py-1.5 pl-7 pr-3 rounded-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-trustBlue focus:bg-white transition-all duration-300">
-                    <i data-lucide="search" class="w-3 h-3 text-gray-400 absolute left-2.5 top-2.5 pointer-events-none"></i>
+            <!-- Navigation Action Area (Desktop vs Mobile Hamburger) -->
+            <div class="flex items-center space-x-3">
+                <!-- Desktop Search & Donate (Hidden on Small Screens) -->
+                <div class="hidden xl:flex items-center space-x-3">
+                    <div class="relative">
+                        <input type="text" id="siteSearchInput" onkeyup="handleSiteSearch(this.value)" placeholder="Search..." class="w-32 focus:w-44 bg-gray-100 text-[11px] py-1.5 pl-7 pr-2 rounded-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-trustBlue focus:bg-white transition-all duration-300">
+                        <i class="fa-solid fa-magnifying-glass text-gray-400 text-xs absolute left-2.5 top-2.5 pointer-events-none"></i>
+                    </div>
+
+                    <button onclick="toggleDonateModal()" class="bg-trustBlue hover:bg-blue-900 text-white px-4 py-2 rounded-lg font-bold text-xs shadow-md transition flex items-center whitespace-nowrap">
+                        <i class="fa-solid fa-heart mr-1.5 text-red-500"></i> Donate Now
+                    </button>
                 </div>
 
-                <button onclick="toggleDonateModal()" class="bg-trustBlue hover:bg-blue-900 text-white px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-lg font-bold text-xs shadow-md transition flex items-center whitespace-nowrap">
-                    <i class="fa-solid fa-heart" w-3.5 h-3.5 mr-1.5 style="color: rgb(231, 4, 4);"></i> Donate Now
+                <!-- Mobile Hamburger Toggle Button -->
+                <button onclick="toggleMobileMenu()" class="xl:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition focus:outline-none" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars text-xl" id="menuOpenIcon"></i>
+                    <i class="fa-solid fa-xmark text-xl hidden" id="menuCloseIcon"></i>
                 </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation (Contains Search & Donate for Small Screens) -->
+        <div id="mobileMenu" class="xl:hidden hidden bg-white border-b border-gray-200 px-4 pt-3 pb-6 space-y-4 shadow-lg transition-all">
+            <!-- Mobile Search Bar -->
+            <div class="relative">
+                <input type="text" id="siteSearchInputMobile" onkeyup="handleSiteSearch(this.value)" placeholder="Search projects, counties & news..." class="w-full bg-gray-100 text-xs py-2.5 pl-9 pr-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-trustBlue focus:bg-white transition">
+                <i class="fa-solid fa-magnifying-glass text-gray-400 absolute left-3 top-3.5 text-xs pointer-events-none"></i>
+            </div>
+
+            <!-- Nav Links -->
+            <div class="space-y-1">
+                <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-sm font-bold text-gray-700 hover:text-trustBlue border-b border-gray-100">About Us</a>
+                <a href="#mission" onclick="toggleMobileMenu()" class="block py-2 text-sm font-bold text-gray-700 hover:text-trustBlue border-b border-gray-100">Mission & Vision</a>
+                <a href="#pillars" onclick="toggleMobileMenu()" class="block py-2 text-sm font-bold text-gray-700 hover:text-trustBlue border-b border-gray-100">Our Pillars</a>
+                <a href="#counties" onclick="toggleMobileMenu()" class="block py-2 text-sm font-bold text-gray-700 hover:text-trustBlue border-b border-gray-100">Where We Work</a>
+                <a href="#gallery" onclick="toggleMobileMenu()" class="block py-2 text-sm font-bold text-gray-700 hover:text-trustBlue border-b border-gray-100">Gallery</a>
+                <a href="#events" onclick="toggleMobileMenu()" class="block py-2 text-sm font-bold text-gray-700 hover:text-trustBlue border-b border-gray-100">Events</a>
+                <a href="#blog" onclick="toggleMobileMenu()" class="block py-2 text-sm font-bold text-gray-700 hover:text-trustBlue border-b border-gray-100">Blog</a>
+            </div>
+
+            <!-- Mobile Action Buttons -->
+            <div class="pt-2 space-y-2">
+                <button onclick="toggleDonateModal(); toggleMobileMenu();" class="w-full bg-trustBlue hover:bg-blue-900 text-white py-2.5 rounded-xl font-bold text-xs shadow transition flex items-center justify-center">
+                    <i class="fa-solid fa-heart mr-2 text-red-500"></i> Donate Now
+                </button>
+                <a href="#volunteer" onclick="toggleMobileMenu()" class="block text-center bg-earthRed hover:bg-red-700 text-white py-2.5 rounded-xl font-bold text-xs transition">
+                    <i class="fa-solid fa-person-arrow-down-to-line mr-1.5" style="color: rgb(255, 212, 59);"></i> Become a Volunteer
+                </a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="about" class="relative bg-gradient-to-r from-trustBlue to-blue-900 text-white py-20 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-                <span class="bg-warmGold text-trustBlue text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Registered Non-Profit NGO</span>
-                <h1 class="text-4xl sm:text-5xl font-black leading-tight">Transforming Lives Through Education, Health & Digital Inclusion</h1>
-                <p class="text-blue-100 text-lg">Empowering vulnerable children, youth, women, and communities across Kenya with sustainable access to learning, healthcare, and economic tools.</p>
+    <section id="about" class="relative bg-gradient-to-r from-trustBlue to-blue-900 text-white py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div class="space-y-4 sm:space-y-6">
+                <span class="bg-warmGold text-trustBlue text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-block">Registered Non-Profit NGO</span>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black leading-tight">Transforming Lives Through Education, Health, ICT & Climate Adaptation</h1>
+                <p class="text-blue-100 text-sm sm:text-lg leading-relaxed">Empowering vulnerable children, youth, women, and rural communities across Kenya with sustainable access to learning, healthcare, digital tools, and environmental resilience.</p>
                 <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-2">
-                    <a href="#volunteer" class="bg-earthRed hover:bg-red-700 text-white px-6 py-3.5 rounded-lg font-bold shadow-lg text-center transition">Become a Volunteer</a>
-                    <a href="#counties" class="border-2 border-white hover:bg-white hover:text-trustBlue text-white px-6 py-3.5 rounded-lg font-bold text-center transition">Explore Operating Counties</a>
+                    <a href="#volunteer" class="bg-earthRed hover:bg-red-700 text-white px-6 py-3.5 rounded-lg font-bold shadow-lg text-center transition text-sm">Become a Volunteer</a>
+                    <a href="#counties" class="border-2 border-white hover:bg-white hover:text-trustBlue text-white px-6 py-3.5 rounded-lg font-bold text-center transition text-sm">Explore Operating Counties</a>
                 </div>
             </div>
-            <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-2xl">
-                <h3 class="text-xl font-bold mb-4 flex items-center text-warmGold"><i data-lucide="shield-check" class="mr-2"></i> Immediate Community Impact</h3>
-                <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-2xl mt-6 lg:mt-0">
+                <h3 class="text-lg sm:text-xl font-bold mb-4 flex items-center text-warmGold"><i class="fa-solid fa-shield-halved mr-2"></i> Immediate Community Impact</h3>
+                <div class="grid grid-cols-2 gap-3 sm:gap-4">
                     <div class="bg-white/10 p-4 rounded-xl text-center">
-                        <div class="text-3xl font-extrabold text-warmGold">5</div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-warmGold">5</div>
                         <div class="text-xs text-blue-100 mt-1">Active Counties</div>
                     </div>
                     <div class="bg-white/10 p-4 rounded-xl text-center">
-                        <div class="text-3xl font-extrabold text-warmGold">5</div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-warmGold">6</div>
                         <div class="text-xs text-blue-100 mt-1">Core Pillars</div>
                     </div>
                     <div class="bg-white/10 p-4 rounded-xl text-center col-span-2">
-                        <div class="text-xl font-bold text-white">100% Volunteer-Driven</div>
+                        <div class="text-lg sm:text-xl font-bold text-white">100% Volunteer-Driven</div>
                         <div class="text-xs text-blue-200">Direct-to-community program execution</div>
                     </div>
                 </div>
@@ -106,438 +145,488 @@
     </section>
 
     <!-- MISSION, VISION & GOALS SECTION -->
-    <section id="mission" class="py-16 bg-white border-b border-gray-200">
+    <section id="mission" class="py-12 sm:py-16 bg-white border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12">
+            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
                 <span class="text-xs font-bold text-earthRed uppercase tracking-wider block mb-1">Guiding Principles</span>
-                <h2 class="text-3xl font-extrabold text-trustBlue">Our Mission, Vision & Strategic Goals</h2>
-                <p class="text-gray-600 mt-2 text-sm">Building inclusive community frameworks for sustainable grassroots transformation.</p>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-trustBlue">Our Mission, Vision & Strategic Goals</h2>
+                <p class="text-gray-600 mt-2 text-xs sm:text-sm">Building inclusive community frameworks for sustainable grassroots transformation.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Mission -->
-                <div class="bg-offWhite p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition">
+                <div class="bg-offWhite p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition">
                     <div class="w-12 h-12 bg-trustBlue/10 text-trustBlue rounded-xl flex items-center justify-center mb-4">
-                        <i data-lucide="target" class="w-6 h-6"></i>
+                        <i class="fa-solid fa-bullseye text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-trustBlue mb-3">Our Mission</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-trustBlue mb-3">Our Mission</h3>
                     <p class="text-xs text-gray-600 leading-relaxed">
-                        To mobilize, equip, and empower local volunteers and partners to deliver direct educational, healthcare, digital, and socioeconomic interventions to vulnerable youth, women, and marginalized families across Kenya.
+                        To mobilize, equip, and empower local volunteers and partners to deliver direct educational, healthcare, digital, environmental, and socioeconomic interventions to vulnerable youth, women, and marginalized families across Kenya.
                     </p>
                 </div>
 
                 <!-- Vision -->
-                <div class="bg-offWhite p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition">
+                <div class="bg-offWhite p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition">
                     <div class="w-12 h-12 bg-earthRed/10 text-earthRed rounded-xl flex items-center justify-center mb-4">
-                        <i data-lucide="eye" class="w-6 h-6"></i>
+                        <i class="fa-solid fa-eye text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-trustBlue mb-3">Our Vision</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-trustBlue mb-3">Our Vision</h3>
                     <p class="text-xs text-gray-600 leading-relaxed">
-                        A self-sustaining society where every child accesses quality education, every youth and woman possesses marketable digital and economic skills, and every family enjoys dignified health and well-being.
+                        A climate-resilient and self-sustaining society where every child accesses quality education, every youth and woman possesses marketable digital/economic skills, and families enjoy dignified health and environmental stability.
                     </p>
                 </div>
 
                 <!-- Strategic Goals -->
-                <div class="bg-offWhite p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition">
+                <div class="bg-offWhite p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition">
                     <div class="w-12 h-12 bg-warmGold/20 text-yellow-700 rounded-xl flex items-center justify-center mb-4">
-                        <i data-lucide="compass" class="w-6 h-6"></i>
+                        <i class="fa-solid fa-compass text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-trustBlue mb-3">Our Strategic Goals</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-trustBlue mb-3">Our Strategic Goals</h3>
                     <ul class="text-xs text-gray-600 space-y-2 list-disc list-inside">
                         <li>Eliminate financial barriers to primary & secondary schooling.</li>
+                        <li>Plant 50,000+ indigenous trees and lead climate adaptation drives.</li>
                         <li>Equip 1,000+ youth and women with workforce digital tools yearly.</li>
                         <li>Expand clean water and health interventions across pastoral counties.</li>
-                        <li>Establish independent micro-enterprises for vulnerable women.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5 CORE PILLARS SECTION -->
-    <section id="pillars" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-12">
-            <h2 class="text-3xl font-extrabold text-trustBlue">Our Core Pillars of Impact</h2>
-            <p class="text-gray-600 mt-2">Driven by our mission to provide structured platforms that transform lives across key societal sectors.</p>
+    <!-- 6 CORE PILLARS SECTION -->
+    <section id="pillars" class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-trustBlue">Our Core Pillars of Impact</h2>
+            <p class="text-gray-600 text-xs sm:text-sm mt-2">Driven by our mission to provide structured platforms that transform lives across key societal sectors.</p>
         </div>
-        <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
-            <!-- Pillar 1 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <!-- Pillar 1: Education (Trust Blue) -->
             <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-trustBlue hover:shadow-lg transition flex flex-col justify-between">
                 <div>
-                    <div class="w-12 h-12 bg-blue-100 text-trustBlue rounded-lg flex items-center justify-center mb-4"><i data-lucide="book-open"></i></div>
+                    <div class="w-12 h-12 bg-blue-100 text-trustBlue rounded-lg flex items-center justify-center mb-4"><i class="fa-solid fa-book-open"></i></div>
                     <h3 class="font-bold text-base text-trustBlue mb-2">Education Access</h3>
                     <p class="text-xs text-gray-600 mb-4">Paying school fees, providing learning materials, and supporting orphans and vulnerable children (OVCs).</p>
                 </div>
                 <button onclick="viewPillarProjects('education')" class="text-xs font-bold text-trustBlue hover:text-earthRed flex items-center transition pt-2 border-t border-gray-100">
-                    View Successful Projects <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+                    View Successful Projects <i class="fa-solid fa-arrow-right ml-1"></i>
                 </button>
             </div>
 
-            <!-- Pillar 2 -->
+            <!-- Pillar 2: Health (Earth Red) -->
             <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-earthRed hover:shadow-lg transition flex flex-col justify-between">
                 <div>
-                    <div class="w-12 h-12 bg-red-100 text-earthRed rounded-lg flex items-center justify-center mb-4"><i data-lucide="heart-pulse"></i></div>
+                    <div class="w-12 h-12 bg-red-100 text-earthRed rounded-lg flex items-center justify-center mb-4"><i class="fa-solid fa-heart-pulse"></i></div>
                     <h3 class="font-bold text-base text-trustBlue mb-2">Health & Awareness</h3>
                     <p class="text-xs text-gray-600 mb-4">Promoting public health, hygiene, HIV/AIDS mitigation, and reproductive health education in communities.</p>
                 </div>
                 <button onclick="viewPillarProjects('health')" class="text-xs font-bold text-trustBlue hover:text-earthRed flex items-center transition pt-2 border-t border-gray-100">
-                    View Successful Projects <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+                    View Successful Projects <i class="fa-solid fa-arrow-right ml-1"></i>
                 </button>
             </div>
 
-            <!-- Pillar 3 -->
+            <!-- Pillar 3: ICT & Digital Skills (Warm Gold) -->
             <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-warmGold hover:shadow-lg transition flex flex-col justify-between">
                 <div>
-                    <div class="w-12 h-12 bg-yellow-100 text-yellow-700 rounded-lg flex items-center justify-center mb-4"><i data-lucide="laptop"></i></div>
+                    <div class="w-12 h-12 bg-yellow-100 text-yellow-700 rounded-lg flex items-center justify-center mb-4"><i class="fa-solid fa-laptop"></i></div>
                     <h3 class="font-bold text-base text-trustBlue mb-2">ICT & Digital Skills</h3>
                     <p class="text-xs text-gray-600 mb-4">Equipping youth and school-going children with digital literacy, computer training, and technology tools.</p>
                 </div>
                 <button onclick="viewPillarProjects('ict')" class="text-xs font-bold text-trustBlue hover:text-earthRed flex items-center transition pt-2 border-t border-gray-100">
-                    View Successful Projects <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+                    View Successful Projects <i class="fa-solid fa-arrow-right ml-1"></i>
                 </button>
             </div>
 
-            <!-- Pillar 4 -->
+            <!-- Pillar 4: Youth & Women Empowerment (Purple) -->
             <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-purple-600 hover:shadow-lg transition flex flex-col justify-between">
                 <div>
-                    <div class="w-12 h-12 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center mb-4"><i data-lucide="users"></i></div>
+                    <div class="w-12 h-12 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center mb-4"><i class="fa-solid fa-users"></i></div>
                     <h3 class="font-bold text-base text-trustBlue mb-2">Youth & Women Empowerment</h3>
                     <p class="text-xs text-gray-600 mb-4">Vocational bootcamps, business seed grants, leadership mentorship, and entrepreneurship incubators.</p>
                 </div>
                 <button onclick="viewPillarProjects('empowerment')" class="text-xs font-bold text-trustBlue hover:text-earthRed flex items-center transition pt-2 border-t border-gray-100">
-                    View Successful Projects <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+                    View Successful Projects <i class="fa-solid fa-arrow-right ml-1"></i>
                 </button>
             </div>
 
-            <!-- Pillar 5 -->
-            <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-green-600 hover:shadow-lg transition flex flex-col justify-between">
+            <!-- Pillar 5: Economic Empowerment (Vibrant Orange) -->
+            <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-orange-500 hover:shadow-lg transition flex flex-col justify-between">
                 <div>
-                    <div class="w-12 h-12 bg-green-100 text-green-700 rounded-lg flex items-center justify-center mb-4"><i data-lucide="trending-up"></i></div>
+                    <div class="w-12 h-12 bg-orange-100 text-orange-700 rounded-lg flex items-center justify-center mb-4"><i class="fa-solid fa-chart-line"></i></div>
                     <h3 class="font-bold text-base text-trustBlue mb-2">Economic Empowerment</h3>
                     <p class="text-xs text-gray-600 mb-4">Providing training, micro-support, and necessities to poor women, caregivers, and vulnerable groups.</p>
                 </div>
                 <button onclick="viewPillarProjects('economic')" class="text-xs font-bold text-trustBlue hover:text-earthRed flex items-center transition pt-2 border-t border-gray-100">
-                    View Successful Projects <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+                    View Successful Projects <i class="fa-solid fa-arrow-right ml-1"></i>
+                </button>
+            </div>
+
+            <!-- Pillar 6: Environment & Climate Adaptation (Emerald) -->
+            <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-emerald-600 hover:shadow-lg transition flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-lg flex items-center justify-center mb-4"><i class="fa-solid fa-leaf"></i></div>
+                    <h3 class="font-bold text-base text-trustBlue mb-2">Environment & Climate Adaptation</h3>
+                    <p class="text-xs text-gray-600 mb-4">Tree planting drives, school eco-clubs, clean energy adoption, and climate adaptation in drought-prone areas.</p>
+                </div>
+                <button onclick="viewPillarProjects('environment')" class="text-xs font-bold text-trustBlue hover:text-earthRed flex items-center transition pt-2 border-t border-gray-100">
+                    View Successful Projects <i class="fa-solid fa-arrow-right ml-1"></i>
                 </button>
             </div>
         </div>
     </section>
 
     <!-- Interactive County Map / Hub Section -->
-    <section id="counties" class="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+    <section id="counties" class="bg-gray-100 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-10">
-                <h2 class="text-3xl font-extrabold text-trustBlue">Operating Counties</h2>
-                <p class="text-gray-600 mt-2">Select a county to inspect localized outreach and field projects.</p>
+            <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-trustBlue">Operating Counties</h2>
+                <p class="text-gray-600 text-xs sm:text-sm mt-2">Select a county to inspect localized outreach and field projects.</p>
             </div>
-            <div class="flex flex-wrap justify-center gap-3 mb-8">
-                <button onclick="selectCounty('nairobi')" id="btn-nairobi" class="county-btn bg-trustBlue text-white px-5 py-2.5 rounded-full font-bold text-sm shadow">Nairobi</button>
-                <button onclick="selectCounty('kajiado')" id="btn-kajiado" class="county-btn bg-white text-gray-700 hover:bg-gray-200 px-5 py-2.5 rounded-full font-bold text-sm shadow">Kajiado</button>
-                <button onclick="selectCounty('kakamega')" id="btn-kakamega" class="county-btn bg-white text-gray-700 hover:bg-gray-200 px-5 py-2.5 rounded-full font-bold text-sm shadow">Kakamega</button>
-                <button onclick="selectCounty('makueni')" id="btn-makueni" class="county-btn bg-white text-gray-700 hover:bg-gray-200 px-5 py-2.5 rounded-full font-bold text-sm shadow">Makueni</button>
-                <button onclick="selectCounty('kiambu')" id="btn-kiambu" class="county-btn bg-white text-gray-700 hover:bg-gray-200 px-5 py-2.5 rounded-full font-bold text-sm shadow">Kiambu</button>
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8">
+                <button onclick="selectCounty('nairobi')" id="btn-nairobi" class="county-btn bg-trustBlue text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm shadow">Nairobi</button>
+                <button onclick="selectCounty('kajiado')" id="btn-kajiado" class="county-btn bg-white text-gray-700 hover:bg-gray-200 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm shadow">Kajiado</button>
+                <button onclick="selectCounty('kakamega')" id="btn-kakamega" class="county-btn bg-white text-gray-700 hover:bg-gray-200 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm shadow">Kakamega</button>
+                <button onclick="selectCounty('makueni')" id="btn-makueni" class="county-btn bg-white text-gray-700 hover:bg-gray-200 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm shadow">Makueni</button>
+                <button onclick="selectCounty('kiambu')" id="btn-kiambu" class="county-btn bg-white text-gray-700 hover:bg-gray-200 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm shadow">Kiambu</button>
             </div>
-            <div id="county-card" class="bg-white p-8 rounded-2xl shadow-xl border border-gray-200 max-w-3xl mx-auto">
-                <div class="flex items-center space-x-3 text-earthRed font-bold text-sm uppercase mb-2">
-                    <i data-lucide="map-pin"></i> <span id="county-title">Nairobi County HQ</span>
+            <div id="county-card" class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-200 max-w-3xl mx-auto">
+                <div class="flex items-center space-x-2 text-earthRed font-bold text-xs sm:text-sm uppercase mb-2">
+                    <i class="fa-solid fa-location-dot"></i> <span id="county-title">Nairobi County HQ</span>
                 </div>
-                <h3 id="county-heading" class="text-2xl font-bold text-trustBlue mb-3">Urban ICT & Education Hub</h3>
-                <p id="county-desc" class="text-gray-600 leading-relaxed mb-6">Central hub managing tech literacy programs, digital volunteer coordination, and emergency relief distribution for vulnerable urban settlements.</p>
-                <div class="grid grid-cols-2 gap-4 border-t border-gray-100 pt-4">
+                <h3 id="county-heading" class="text-xl sm:text-2xl font-bold text-trustBlue mb-3">Urban ICT & Education Hub</h3>
+                <p id="county-desc" class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-6">Central hub managing tech literacy programs, digital volunteer coordination, tree planting drives, and emergency relief distribution for vulnerable urban settlements.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-gray-100 pt-4">
                     <div>
-                        <span class="block text-xs text-gray-400 font-bold uppercase">Focus Area</span>
-                        <span id="county-focus" class="text-sm font-semibold text-trustBlue">ICT & School Supplies</span>
+                        <span class="block text-[10px] sm:text-xs text-gray-400 font-bold uppercase">Focus Area</span>
+                        <span id="county-focus" class="text-xs sm:text-sm font-semibold text-trustBlue">ICT & School Supplies</span>
                     </div>
                     <div>
-                        <span class="block text-xs text-gray-400 font-bold uppercase">Primary Beneficiaries</span>
-                        <span id="county-target" class="text-sm font-semibold text-trustBlue">Youth & Street Children</span>
+                        <span class="block text-[10px] sm:text-xs text-gray-400 font-bold uppercase">Primary Beneficiaries</span>
+                        <span id="county-target" class="text-xs sm:text-sm font-semibold text-trustBlue">Youth & Street Children</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FIELD PROOF GALLERY (Standard Group Style) -->
-    <section id="gallery" class="py-20 bg-white border-b border-gray-200">
+    <!-- FIELD PROOF GALLERY -->
+    <section id="gallery" class="py-12 sm:py-20 bg-white border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
                 <span class="text-xs font-mono font-bold text-earthRed uppercase tracking-widest block mb-2">SHOWCASE</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-trustBlue tracking-tight">Our Proudest Impact.</h2>
-                <p class="text-gray-600 text-base sm:text-lg mt-3 font-serif italic">
+                <h2 class="text-2xl sm:text-4xl lg:text-5xl font-black text-trustBlue tracking-tight">Our Proudest Impact.</h2>
+                <p class="text-gray-600 text-sm sm:text-base mt-3 font-serif italic">
                     "Sometimes, the work just speaks for itself." Our volunteers deliver transformative projects across Kenya—here is a visual record of our impact in action.
                 </p>
             </div>
 
             <!-- Filter Buttons -->
-            <div class="flex flex-wrap justify-center gap-2 mb-12">
-                <button onclick="filterGallery('all')" id="gfilter-all" class="gfilter-btn bg-trustBlue text-white text-xs font-bold px-6 py-2.5 rounded-full shadow-sm transition">All Work</button>
-                <button onclick="filterGallery('education')" id="gfilter-education" class="gfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-6 py-2.5 rounded-full transition">Education Drive</button>
-                <button onclick="filterGallery('health')" id="gfilter-health" class="gfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-6 py-2.5 rounded-full transition">Health Outreach</button>
-                <button onclick="filterGallery('ict')" id="gfilter-ict" class="gfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-6 py-2.5 rounded-full transition">ICT Workshops</button>
-                <button onclick="filterGallery('empowerment')" id="gfilter-empowerment" class="gfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-6 py-2.5 rounded-full transition">Youth & Women</button>
-                <button onclick="filterGallery('economic')" id="gfilter-economic" class="gfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-6 py-2.5 rounded-full transition">Livelihoods</button>
+            <div class="flex flex-wrap justify-center gap-2 mb-8 sm:mb-12">
+                <button onclick="filterGallery('all')" id="gfilter-all" class="gfilter-btn bg-trustBlue text-white text-xs font-bold px-4 py-2 sm:px-6 sm:py-2.5 rounded-full shadow-sm transition">All Work</button>
+                <button onclick="filterGallery('education')" id="gfilter-education" class="gfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-4 py-2 sm:px-6 sm:py-2.5 rounded-full transition">Education Drive</button>
+                <button onclick="filterGallery('health')" id="gfilter-health" class="gfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-4 py-2 sm:px-6 sm:py-2.5 rounded-full transition">Health Outreach</button>
+                <button onclick="filterGallery('environment')" id="gfilter-environment" class="gfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-4 py-2 sm:px-6 sm:py-2.5 rounded-full transition">Environment & Climate</button>
+                <button onclick="filterGallery('ict')" id="gfilter-ict" class="gfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-4 py-2 sm:px-6 sm:py-2.5 rounded-full transition">ICT Workshops</button>
+                <button onclick="filterGallery('empowerment')" id="gfilter-empowerment" class="gfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-4 py-2 sm:px-6 sm:py-2.5 rounded-full transition">Youth & Women</button>
+                <button onclick="filterGallery('economic')" id="gfilter-economic" class="gfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-4 py-2 sm:px-6 sm:py-2.5 rounded-full transition">Livelihoods</button>
             </div>
 
             <!-- Gallery Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="gallery-grid">
                 <div class="gallery-item education group cursor-pointer bg-offWhite rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl transition duration-300 flex flex-col" onclick="openLightbox('#', 'Kakamega School Kit Distribution', 'Kakamega County • Education', 'Equipped 150+ orphans and vulnerable children with full school uniform sets, textbooks, and stationery packages.')">
-                    <div class="relative h-64 overflow-hidden bg-gray-300">
+                    <div class="relative h-48 sm:h-64 overflow-hidden bg-gray-300">
                         <img src="#" alt="Kakamega School Kit Distribution" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-trustBlue/90 via-trustBlue/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-                            <span class="text-white text-xs font-bold flex items-center"><i data-lucide="maximize-2" class="w-4 h-4 mr-2 text-warmGold"></i> View Full Image & Details</span>
+                            <span class="text-white text-xs font-bold flex items-center"><i class="fa-solid fa-expand mr-2 text-warmGold"></i> View Full Image & Details</span>
                         </div>
                         <span class="absolute top-4 left-4 bg-trustBlue text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Kakamega County</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-2">
+                    <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-2">
                         <div>
-                            <span class="text-[11px] font-bold text-earthRed uppercase tracking-wider">Education Pillar</span>
-                            <h3 class="text-lg font-bold text-trustBlue group-hover:text-earthRed transition">School Kit & Tuition Support</h3>
+                            <span class="text-[10px] sm:text-[11px] font-bold text-earthRed uppercase tracking-wider">Education Pillar</span>
+                            <h3 class="text-base sm:text-lg font-bold text-trustBlue group-hover:text-earthRed transition">School Kit & Tuition Support</h3>
                             <p class="text-xs text-gray-600 mt-1 leading-relaxed">Providing learning essentials to 150+ students facing financial hardship in rural schools.</p>
                         </div>
-                        <span class="text-xs font-bold text-trustBlue pt-3 border-t border-gray-200 flex items-center">Explore Project <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i></span>
+                        <span class="text-xs font-bold text-trustBlue pt-3 border-t border-gray-200 flex items-center">Explore Project <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                    </div>
+                </div>
+
+                <div class="gallery-item environment group cursor-pointer bg-offWhite rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl transition duration-300 flex flex-col" onclick="openLightbox('#', 'Kajiado School Tree Reforestation Drive', 'Kajiado County • Environment & Climate', 'Planted 2,500 indigenous seedlings across local school grounds and established school eco-clubs for climate stewardship.')">
+                    <div class="relative h-48 sm:h-64 overflow-hidden bg-gray-300">
+                        <img src="#" alt="School Tree Reforestation Drive" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-trustBlue/90 via-trustBlue/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                            <span class="text-white text-xs font-bold flex items-center"><i class="fa-solid fa-expand mr-2 text-warmGold"></i> View Full Image & Details</span>
+                        </div>
+                        <span class="absolute top-4 left-4 bg-emerald-700 text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Kajiado County</span>
+                    </div>
+                    <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-2">
+                        <div>
+                            <span class="text-[10px] sm:text-[11px] font-bold text-emerald-700 uppercase tracking-wider">Environment Pillar</span>
+                            <h3 class="text-base sm:text-lg font-bold text-trustBlue group-hover:text-earthRed transition">School Reforestation & Eco-Clubs</h3>
+                            <p class="text-xs text-gray-600 mt-1 leading-relaxed">Planting indigenous seedlings and training school eco-clubs on climate adaptation techniques.</p>
+                        </div>
+                        <span class="text-xs font-bold text-trustBlue pt-3 border-t border-gray-200 flex items-center">Explore Project <i class="fa-solid fa-arrow-right ml-1"></i></span>
                     </div>
                 </div>
 
                 <div class="gallery-item ict group cursor-pointer bg-offWhite rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl transition duration-300 flex flex-col" onclick="openLightbox('#', 'Nairobi Youth Digital Bootcamp', 'Nairobi County • ICT Skills', 'A 4-week computer basics bootcamp training peri-urban high school graduates in essential digital workforce skills.')">
-                    <div class="relative h-64 overflow-hidden bg-gray-300">
+                    <div class="relative h-48 sm:h-64 overflow-hidden bg-gray-300">
                         <img src="#" alt="Nairobi Youth Digital Bootcamp" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-trustBlue/90 via-trustBlue/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-                            <span class="text-white text-xs font-bold flex items-center"><i data-lucide="maximize-2" class="w-4 h-4 mr-2 text-warmGold"></i> View Full Image & Details</span>
+                            <span class="text-white text-xs font-bold flex items-center"><i class="fa-solid fa-expand mr-2 text-warmGold"></i> View Full Image & Details</span>
                         </div>
                         <span class="absolute top-4 left-4 bg-trustBlue text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Nairobi HQ</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-2">
+                    <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-2">
                         <div>
-                            <span class="text-[11px] font-bold text-warmGold uppercase tracking-wider">ICT & Digital Skills</span>
-                            <h3 class="text-lg font-bold text-trustBlue group-hover:text-earthRed transition">Youth Tech Literacy Bootcamp</h3>
+                            <span class="text-[10px] sm:text-[11px] font-bold text-warmGold uppercase tracking-wider">ICT & Digital Skills</span>
+                            <h3 class="text-base sm:text-lg font-bold text-trustBlue group-hover:text-earthRed transition">Youth Tech Literacy Bootcamp</h3>
                             <p class="text-xs text-gray-600 mt-1 leading-relaxed">Equipping peri-urban youth with computer literacy and online job search tools.</p>
                         </div>
-                        <span class="text-xs font-bold text-trustBlue pt-3 border-t border-gray-200 flex items-center">Explore Project <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i></span>
+                        <span class="text-xs font-bold text-trustBlue pt-3 border-t border-gray-200 flex items-center">Explore Project <i class="fa-solid fa-arrow-right ml-1"></i></span>
                     </div>
                 </div>
 
                 <div class="gallery-item empowerment group cursor-pointer bg-offWhite rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl transition duration-300 flex flex-col" onclick="openLightbox('#', 'Young Women Micro-Grant Drive', 'Kiambu County • Empowerment', 'Provided starter capital, sewing machines, and business management training to 40 young women entrepreneurs.')">
-                    <div class="relative h-64 overflow-hidden bg-gray-300">
+                    <div class="relative h-48 sm:h-64 overflow-hidden bg-gray-300">
                         <img src="#" alt="Young Women Micro-Grant Drive" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-trustBlue/90 via-trustBlue/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-                            <span class="text-white text-xs font-bold flex items-center"><i data-lucide="maximize-2" class="w-4 h-4 mr-2 text-warmGold"></i> View Full Image & Details</span>
+                            <span class="text-white text-xs font-bold flex items-center"><i class="fa-solid fa-expand mr-2 text-warmGold"></i> View Full Image & Details</span>
                         </div>
                         <span class="absolute top-4 left-4 bg-purple-700 text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Kiambu County</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-2">
+                    <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-2">
                         <div>
-                            <span class="text-[11px] font-bold text-purple-700 uppercase tracking-wider">Youth & Women Empowerment</span>
-                            <h3 class="text-lg font-bold text-trustBlue group-hover:text-earthRed transition">Female Business Incubator</h3>
+                            <span class="text-[10px] sm:text-[11px] font-bold text-purple-700 uppercase tracking-wider">Youth & Women Empowerment</span>
+                            <h3 class="text-base sm:text-lg font-bold text-trustBlue group-hover:text-earthRed transition">Female Business Incubator</h3>
                             <p class="text-xs text-gray-600 mt-1 leading-relaxed">Empowering young women with business starter kits and micro-grant mentorship.</p>
                         </div>
-                        <span class="text-xs font-bold text-trustBlue pt-3 border-t border-gray-200 flex items-center">Explore Project <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i></span>
+                        <span class="text-xs font-bold text-trustBlue pt-3 border-t border-gray-200 flex items-center">Explore Project <i class="fa-solid fa-arrow-right ml-1"></i></span>
                     </div>
                 </div>
 
                 <div class="gallery-item health group cursor-pointer bg-offWhite rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl transition duration-300 flex flex-col" onclick="openLightbox('#', 'Clean Water & Hygiene Camp', 'Kajiado County • Health Outreach', 'Distributed water purification tablets and conducted reproductive health and hygiene workshops.')">
-                    <div class="relative h-64 overflow-hidden bg-gray-300">
+                    <div class="relative h-48 sm:h-64 overflow-hidden bg-gray-300">
                         <img src="#" alt="Clean Water & Hygiene Camp" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-trustBlue/90 via-trustBlue/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-                            <span class="text-white text-xs font-bold flex items-center"><i data-lucide="maximize-2" class="w-4 h-4 mr-2 text-warmGold"></i> View Full Image & Details</span>
+                            <span class="text-white text-xs font-bold flex items-center"><i class="fa-solid fa-expand mr-2 text-warmGold"></i> View Full Image & Details</span>
                         </div>
                         <span class="absolute top-4 left-4 bg-trustBlue text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Kajiado County</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-2">
+                    <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-2">
                         <div>
-                            <span class="text-[11px] font-bold text-earthRed uppercase tracking-wider">Health Outreach</span>
-                            <h3 class="text-lg font-bold text-trustBlue group-hover:text-earthRed transition">Water & Health Sanitation Drive</h3>
+                            <span class="text-[10px] sm:text-[11px] font-bold text-earthRed uppercase tracking-wider">Health Outreach</span>
+                            <h3 class="text-base sm:text-lg font-bold text-trustBlue group-hover:text-earthRed transition">Water & Health Sanitation Drive</h3>
                             <p class="text-xs text-gray-600 mt-1 leading-relaxed">Promoting public health, clean water access, and hygiene education in rural communities.</p>
                         </div>
-                        <span class="text-xs font-bold text-trustBlue pt-3 border-t border-gray-200 flex items-center">Explore Project <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i></span>
+                        <span class="text-xs font-bold text-trustBlue pt-3 border-t border-gray-200 flex items-center">Explore Project <i class="fa-solid fa-arrow-right ml-1"></i></span>
                     </div>
                 </div>
 
                 <div class="gallery-item economic group cursor-pointer bg-offWhite rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl transition duration-300 flex flex-col" onclick="openLightbox('#', 'Caregiver Livelihoods Program', 'Makueni County • Economic Inclusion', 'Provided vocational toolkits and agricultural support to women heading vulnerable households.')">
-                    <div class="relative h-64 overflow-hidden bg-gray-300">
+                    <div class="relative h-48 sm:h-64 overflow-hidden bg-gray-300">
                         <img src="#" alt="Caregiver Livelihoods Program" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-trustBlue/90 via-trustBlue/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-                            <span class="text-white text-xs font-bold flex items-center"><i data-lucide="maximize-2" class="w-4 h-4 mr-2 text-warmGold"></i> View Full Image & Details</span>
+                            <span class="text-white text-xs font-bold flex items-center"><i class="fa-solid fa-expand mr-2 text-warmGold"></i> View Full Image & Details</span>
                         </div>
                         <span class="absolute top-4 left-4 bg-trustBlue text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Makueni County</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-2">
+                    <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-2">
                         <div>
-                            <span class="text-[11px] font-bold text-green-700 uppercase tracking-wider">Economic Inclusion</span>
-                            <h3 class="text-lg font-bold text-trustBlue group-hover:text-earthRed transition">Caregiver Livelihood Support</h3>
+                            <span class="text-[10px] sm:text-[11px] font-bold text-orange-700 uppercase tracking-wider">Economic Inclusion</span>
+                            <h3 class="text-base sm:text-lg font-bold text-trustBlue group-hover:text-earthRed transition">Caregiver Livelihood Support</h3>
                             <p class="text-xs text-gray-600 mt-1 leading-relaxed">Providing agricultural tools and vocational training to empower women caregivers.</p>
                         </div>
-                        <span class="text-xs font-bold text-trustBlue pt-3 border-t border-gray-200 flex items-center">Explore Project <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i></span>
+                        <span class="text-xs font-bold text-trustBlue pt-3 border-t border-gray-200 flex items-center">Explore Project <i class="fa-solid fa-arrow-right ml-1"></i></span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- EVENTS HUB (Inspired by events.alxafrica.com) -->
-    <section id="events" class="py-16 bg-gray-100 border-b border-gray-200">
+    <!-- EVENTS HUB -->
+    <section id="events" class="py-12 sm:py-16 bg-gray-100 border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4">
                 <div>
                     <span class="text-xs font-extrabold text-earthRed uppercase tracking-wider block mb-2">Community Engagement</span>
-                    <h2 class="text-3xl sm:text-4xl font-black text-trustBlue">WVFC Events & Gatherings</h2>
-                    <p class="text-gray-600 text-sm mt-1">Connect with our field teams, participate in workshops, or volunteer in person.</p>
+                    <h2 class="text-2xl sm:text-4xl font-black text-trustBlue">WVFC Events & Gatherings</h2>
+                    <p class="text-gray-600 text-xs sm:text-sm mt-1">Connect with our field teams, participate in workshops, or volunteer in person.</p>
                 </div>
                 <!-- Interactive Tab Control -->
-                <div class="mt-4 md:mt-0 flex bg-white p-1 rounded-xl shadow-sm border border-gray-200">
-                    <button id="event-tab-upcoming" onclick="switchEventTab('upcoming')" class="px-5 py-2 text-xs font-bold rounded-lg bg-trustBlue text-white shadow transition">Upcoming Events</button>
-                    <button id="event-tab-past" onclick="switchEventTab('past')" class="px-5 py-2 text-xs font-bold rounded-lg text-gray-500 hover:text-trustBlue transition">Past Drives</button>
+                <div class="flex bg-white p-1 rounded-xl shadow-sm border border-gray-200 self-start md:self-auto">
+                    <button id="event-tab-upcoming" onclick="switchEventTab('upcoming')" class="px-4 py-2 text-xs font-bold rounded-lg bg-trustBlue text-white shadow transition">Upcoming Events</button>
+                    <button id="event-tab-past" onclick="switchEventTab('past')" class="px-4 py-2 text-xs font-bold rounded-lg text-gray-500 hover:text-trustBlue transition">Past Drives</button>
                 </div>
             </div>
 
             <!-- Upcoming Events Panel -->
-            <div id="events-upcoming-panel" class="grid md:grid-cols-2 gap-8">
+            <div id="events-upcoming-panel" class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                 <div class="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-md flex flex-col justify-between">
-                    <div class="p-8 space-y-6">
-                        <div class="flex justify-between items-start">
-                            <span class="bg-blue-50 text-trustBlue text-xs font-extrabold px-3 py-1 rounded-full uppercase">Education Drive</span>
+                    <div class="p-6 sm:p-8 space-y-4 sm:space-y-6">
+                        <div class="flex justify-between items-start gap-2">
+                            <span class="bg-blue-50 text-trustBlue text-[10px] sm:text-xs font-extrabold px-3 py-1 rounded-full uppercase">Education Drive</span>
                             <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">Open for Volunteer RSVP</span>
                         </div>
                         <div>
-                            <span class="text-xs text-gray-400 font-bold uppercase block mb-1">Kakamega County</span>
-                            <h3 class="text-2xl font-bold text-trustBlue leading-tight">Annual Back-To-School Learning Kit Distribution</h3>
+                            <span class="text-[10px] sm:text-xs text-gray-400 font-bold uppercase block mb-1">Kakamega County</span>
+                            <h3 class="text-xl sm:text-2xl font-bold text-trustBlue leading-tight">Annual Back-To-School Learning Kit Distribution</h3>
                         </div>
-                        <div class="grid grid-cols-2 gap-4 py-4 border-y border-gray-100 text-xs text-gray-600">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 py-4 border-y border-gray-100 text-xs text-gray-600">
                             <div class="flex items-center space-x-2">
-                                <i data-lucide="calendar" class="w-4 h-4 text-warmGold"></i>
+                                <i class="fa-solid fa-calendar-days text-warmGold shrink-0"></i>
                                 <span>October 18, 2026</span>
                             </div>
                             <div class="flex items-center space-x-2">
-                                <i data-lucide="clock" class="w-4 h-4 text-warmGold"></i>
+                                <i class="fa-solid fa-clock text-warmGold shrink-0"></i>
                                 <span>09:00 AM – 03:00 PM EAT</span>
                             </div>
-                            <div class="flex items-center space-x-2 col-span-2">
-                                <i data-lucide="map-pin" class="w-4 h-4 text-earthRed"></i>
+                            <div class="flex items-center space-x-2 sm:col-span-2">
+                                <i class="fa-solid fa-location-dot text-earthRed shrink-0"></i>
                                 <span>Kakamega Primary Hall & Field Office</span>
                             </div>
                         </div>
                         <p class="text-xs text-gray-600 leading-relaxed">Join over 30 local volunteers in sorting, packaging, and handing out academic materials and uniform sets to 200+ registered school children.</p>
                     </div>
-                    <div class="bg-gray-50 p-6 border-t border-gray-100 flex items-center justify-between">
-                        <div class="text-xs">
+                    <div class="bg-gray-50 p-4 sm:p-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="text-xs text-center sm:text-left">
                             <span class="text-gray-400 block">Available Slots</span>
                             <span class="font-bold text-trustBlue">12 Seats Remaining</span>
                         </div>
-                        <button onclick="openRsvpModal('Annual Back-To-School Learning Kit Distribution', 'Kakamega County')" class="bg-trustBlue hover:bg-blue-900 text-white text-xs font-bold px-6 py-3 rounded-xl transition shadow">RSVP For Event</button>
+                        <button onclick="openRsvpModal('Annual Back-To-School Learning Kit Distribution', 'Kakamega County')" class="w-full sm:w-auto bg-trustBlue hover:bg-blue-900 text-white text-xs font-bold px-6 py-3 rounded-xl transition shadow">RSVP For Event</button>
                     </div>
                 </div>
 
                 <div class="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-md flex flex-col justify-between">
-                    <div class="p-8 space-y-6">
-                        <div class="flex justify-between items-start">
-                            <span class="bg-yellow-50 text-yellow-800 text-xs font-extrabold px-3 py-1 rounded-full uppercase">ICT Workshop</span>
+                    <div class="p-6 sm:p-8 space-y-4 sm:space-y-6">
+                        <div class="flex justify-between items-start gap-2">
+                            <span class="bg-emerald-50 text-emerald-800 text-[10px] sm:text-xs font-extrabold px-3 py-1 rounded-full uppercase">Climate Action</span>
                             <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">Open for Volunteer RSVP</span>
                         </div>
                         <div>
-                            <span class="text-xs text-gray-400 font-bold uppercase block mb-1">Nairobi County</span>
-                            <h3 class="text-2xl font-bold text-trustBlue leading-tight">Youth Digital Literacy & Coding Orientation</h3>
+                            <span class="text-[10px] sm:text-xs text-gray-400 font-bold uppercase block mb-1">Kajiado County</span>
+                            <h3 class="text-xl sm:text-2xl font-bold text-trustBlue leading-tight">Community Reforestation & Seedling Planting Drive</h3>
                         </div>
-                        <div class="grid grid-cols-2 gap-4 py-4 border-y border-gray-100 text-xs text-gray-600">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 py-4 border-y border-gray-100 text-xs text-gray-600">
                             <div class="flex items-center space-x-2">
-                                <i data-lucide="calendar" class="w-4 h-4 text-warmGold"></i>
+                                <i class="fa-solid fa-calendar-days text-warmGold shrink-0"></i>
                                 <span>November 05, 2026</span>
                             </div>
                             <div class="flex items-center space-x-2">
-                                <i data-lucide="clock" class="w-4 h-4 text-warmGold"></i>
-                                <span>10:00 AM – 02:00 PM EAT</span>
+                                <i class="fa-solid fa-clock text-warmGold shrink-0"></i>
+                                <span>08:30 AM – 01:00 PM EAT</span>
                             </div>
-                            <div class="flex items-center space-x-2 col-span-2">
-                                <i data-lucide="map-pin" class="w-4 h-4 text-earthRed"></i>
-                                <span>WVFC Headquarters (Ngong Nairobi)</span>
+                            <div class="flex items-center space-x-2 sm:col-span-2">
+                                <i class="fa-solid fa-location-dot text-earthRed shrink-0"></i>
+                                <span>Kajiado Central Community Grounds</span>
                             </div>
                         </div>
-                        <p class="text-xs text-gray-600 leading-relaxed">A hands-on mentoring workshop where tech mentors introduce basic computer skills and web navigation to peri-urban high school graduates.</p>
+                        <p class="text-xs text-gray-600 leading-relaxed">Hands-on tree planting drive aiming to plant 3,000 indigenous drought-resistant seedlings alongside local youth and women eco-clubs.</p>
                     </div>
-                    <div class="bg-gray-50 p-6 border-t border-gray-100 flex items-center justify-between">
-                        <div class="text-xs">
+                    <div class="bg-gray-50 p-4 sm:p-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="text-xs text-center sm:text-left">
                             <span class="text-gray-400 block">Available Slots</span>
-                            <span class="font-bold text-trustBlue">8 Tech Mentors Needed</span>
+                            <span class="font-bold text-trustBlue">25 Tree Planting Volunteers</span>
                         </div>
-                        <button onclick="openRsvpModal('Youth Digital Literacy & Coding Orientation', 'Nairobi HQ')" class="bg-trustBlue hover:bg-blue-900 text-white text-xs font-bold px-6 py-3 rounded-xl transition shadow">RSVP For Event</button>
+                        <button onclick="openRsvpModal('Community Reforestation & Seedling Planting Drive', 'Kajiado County')" class="w-full sm:w-auto bg-trustBlue hover:bg-blue-900 text-white text-xs font-bold px-6 py-3 rounded-xl transition shadow">RSVP For Event</button>
                     </div>
                 </div>
             </div>
 
             <!-- Past Events Panel -->
-            <div id="events-past-panel" class="grid md:grid-cols-2 gap-8 hidden">
-                <div class="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-md p-8 space-y-4 opacity-85">
-                    <span class="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-full uppercase">Completed Drive • Kajiado</span>
-                    <h3 class="text-xl font-bold text-trustBlue">Clean Water Purification & Sanitation Outreach</h3>
+            <div id="events-past-panel" class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 hidden">
+                <div class="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-md p-6 sm:p-8 space-y-4 opacity-85">
+                    <span class="bg-gray-100 text-gray-600 text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full uppercase">Completed Drive • Kajiado</span>
+                    <h3 class="text-lg sm:text-xl font-bold text-trustBlue">Clean Water Purification & Sanitation Outreach</h3>
                     <p class="text-xs text-gray-500">Successfully completed on August 12, 2026. 450 hygiene packs distributed to pastoral families.</p>
                 </div>
-                <div class="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-md p-8 space-y-4 opacity-85">
-                    <span class="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-full uppercase">Completed Drive • Makueni</span>
-                    <h3 class="text-xl font-bold text-trustBlue">Caregiver Agricultural Starter Kit Distribution</h3>
+                <div class="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-md p-6 sm:p-8 space-y-4 opacity-85">
+                    <span class="bg-gray-100 text-gray-600 text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full uppercase">Completed Drive • Makueni</span>
+                    <h3 class="text-lg sm:text-xl font-bold text-trustBlue">Caregiver Agricultural Starter Kit Distribution</h3>
                     <p class="text-xs text-gray-500">Successfully completed on July 19, 2026. Empowered 80 women-headed households.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- BLOG HUB (Inspired by alxafrica.com/blog) -->
-    <section id="blog" class="py-16 bg-white border-b border-gray-200">
+    <!-- BLOG HUB -->
+    <section id="blog" class="py-12 sm:py-16 bg-white border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
                 <span class="bg-earthRed/10 text-earthRed text-xs font-extrabold px-3.5 py-1 rounded-full uppercase tracking-wider inline-block mb-3">Field Dispatches & News</span>
-                <h1 class="text-4xl sm:text-5xl font-black text-trustBlue tracking-tight">Stories of Transformation</h1>
-                <p class="text-gray-600 text-base mt-3">Insights, community impact reports, and updates directly from our volunteer leaders across Kenya.</p>
+                <h2 class="text-3xl sm:text-5xl font-black text-trustBlue tracking-tight">Stories of Transformation</h2>
+                <p class="text-gray-600 text-xs sm:text-base mt-3">Insights, community impact reports, and updates directly from our volunteer leaders across Kenya.</p>
             </div>
 
             <!-- Featured Story Hero Card -->
-            <div class="bg-gradient-to-r from-trustBlue to-blue-900 rounded-3xl overflow-hidden shadow-2xl mb-12 grid lg:grid-cols-2 text-white cursor-pointer group" onclick="openBlogArticle('featured')">
-                <div class="relative h-64 lg:h-auto bg-gray-300">
+            <div class="bg-gradient-to-r from-trustBlue to-blue-900 rounded-3xl overflow-hidden shadow-2xl mb-8 sm:mb-12 grid grid-cols-1 lg:grid-cols-2 text-white cursor-pointer group" onclick="openBlogArticle('featured')">
+                <div class="relative h-56 sm:h-72 lg:h-auto bg-gray-300">
                     <img src="#" alt="Featured Article" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    <span class="absolute top-4 left-4 bg-warmGold text-trustBlue text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">Featured Story</span>
+                    <span class="absolute top-4 left-4 bg-warmGold text-trustBlue text-[10px] sm:text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">Featured Story</span>
                 </div>
-                <div class="p-8 lg:p-12 flex flex-col justify-between space-y-6">
-                    <div class="space-y-3">
-                        <span class="text-xs text-blue-200 uppercase font-bold tracking-widest block">Education & OVC Support</span>
-                        <h2 class="text-2xl sm:text-3xl font-extrabold leading-snug group-hover:text-warmGold transition">
+                <div class="p-6 sm:p-8 lg:p-12 flex flex-col justify-between space-y-4 sm:space-y-6">
+                    <div class="space-y-2 sm:space-y-3">
+                        <span class="text-[10px] sm:text-xs text-blue-200 uppercase font-bold tracking-widest block">Education & OVC Support</span>
+                        <h3 class="text-xl sm:text-2xl lg:text-3xl font-extrabold leading-snug group-hover:text-warmGold transition">
                             Bridging the Learning Gap: How School Subsidies Transformed 150+ Lives in Kakamega
-                        </h2>
-                        <p class="text-blue-100 text-sm leading-relaxed">
+                        </h3>
+                        <p class="text-blue-100 text-xs sm:text-sm leading-relaxed">
                             Discover how our localized volunteer teams provided tuition subsidies, books, and uniforms to vulnerable children, keeping them in school despite economic hardships.
                         </p>
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-white/10 text-xs text-blue-200">
                         <div class="flex items-center space-x-2">
                             <div class="w-8 h-8 rounded-full bg-warmGold text-trustBlue font-bold flex items-center justify-center">CEO</div>
-                            <span>CEO</span>
+                            <span>WVFC Leadership</span>
                         </div>
-                        <span class="font-bold underline text-warmGold flex items-center">Read Full Story <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i></span>
+                        <span class="font-bold underline text-warmGold flex items-center">Read Full Story <i class="fa-solid fa-arrow-right ml-1"></i></span>
                     </div>
                 </div>
             </div>
 
             <!-- Category Pills Filter -->
-            <div class="flex flex-wrap justify-center gap-2 mb-10 border-b border-gray-200 pb-6">
-                <button onclick="filterBlog('all')" id="bfilter-all" class="bfilter-btn bg-trustBlue text-white text-xs font-bold px-5 py-2.5 rounded-full shadow-sm transition">All Articles</button>
-                <button onclick="filterBlog('education')" id="bfilter-education" class="bfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-5 py-2.5 rounded-full transition">Education</button>
-                <button onclick="filterBlog('ict')" id="bfilter-ict" class="bfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-5 py-2.5 rounded-full transition">ICT & Tech</button>
-                <button onclick="filterBlog('empowerment')" id="bfilter-empowerment" class="bfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-5 py-2.5 rounded-full transition">Youth & Women</button>
-                <button onclick="filterBlog('health')" id="bfilter-health" class="bfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-5 py-2.5 rounded-full transition">Health & Welfare</button>
-                <button onclick="filterBlog('economic')" id="bfilter-economic" class="bfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-5 py-2.5 rounded-full transition">Economic Inclusion</button>
+            <div class="flex flex-wrap justify-center gap-2 mb-8 sm:mb-10 border-b border-gray-200 pb-6">
+                <button onclick="filterBlog('all')" id="bfilter-all" class="bfilter-btn bg-trustBlue text-white text-xs font-bold px-4 py-2 sm:px-5 sm:py-2.5 rounded-full shadow-sm transition">All Articles</button>
+                <button onclick="filterBlog('education')" id="bfilter-education" class="bfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-4 py-2 sm:px-5 sm:py-2.5 rounded-full transition">Education</button>
+                <button onclick="filterBlog('environment')" id="bfilter-environment" class="bfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-4 py-2 sm:px-5 sm:py-2.5 rounded-full transition">Environment</button>
+                <button onclick="filterBlog('ict')" id="bfilter-ict" class="bfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-4 py-2 sm:px-5 sm:py-2.5 rounded-full transition">ICT & Tech</button>
+                <button onclick="filterBlog('empowerment')" id="bfilter-empowerment" class="bfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-4 py-2 sm:px-5 sm:py-2.5 rounded-full transition">Youth & Women</button>
+                <button onclick="filterBlog('health')" id="bfilter-health" class="bfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-4 py-2 sm:px-5 sm:py-2.5 rounded-full transition">Health & Welfare</button>
+                <button onclick="filterBlog('economic')" id="bfilter-economic" class="bfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-4 py-2 sm:px-5 sm:py-2.5 rounded-full transition">Economic Inclusion</button>
             </div>
 
             <!-- Article Grid -->
-            <div class="grid md:grid-cols-3 gap-8" id="blog-grid">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="blog-grid">
+                <article class="blog-item environment bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col cursor-pointer group" onclick="openBlogArticle('kajiado-climate')">
+                    <div class="relative h-48 bg-gray-200">
+                        <img src="#" alt="Climate Action" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-emerald-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase">Climate Action</span>
+                    </div>
+                    <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <span class="text-[10px] sm:text-[11px] text-gray-400 font-bold uppercase block">September 02, 2026</span>
+                            <h3 class="font-bold text-trustBlue text-base sm:text-lg leading-snug group-hover:text-earthRed transition">Reforestation & Sustainable Eco-Clubs in Kajiado Schools</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">How local student-led green clubs are leading indigenous tree planting drives to combat soil degradation.</p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+                            <span class="font-semibold text-trustBlue group-hover:text-earthRed flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                            <span>5 min read</span>
+                        </div>
+                    </div>
+                </article>
+
                 <article class="blog-item ict bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col cursor-pointer group" onclick="openBlogArticle('nairobi-ict')">
                     <div class="relative h-48 bg-gray-200">
                         <img src="#" alt="Tech training" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-trustBlue text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase">ICT Skills</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
                         <div class="space-y-2">
-                            <span class="text-[11px] text-gray-400 font-bold uppercase block">August 28, 2026</span>
-                            <h3 class="font-bold text-trustBlue text-lg leading-snug group-hover:text-earthRed transition">Equipping Nairobi Youth with Workforce Digital Skills</h3>
+                            <span class="text-[10px] sm:text-[11px] text-gray-400 font-bold uppercase block">August 28, 2026</span>
+                            <h3 class="font-bold text-trustBlue text-base sm:text-lg leading-snug group-hover:text-earthRed transition">Equipping Nairobi Youth with Workforce Digital Skills</h3>
                             <p class="text-xs text-gray-600 leading-relaxed">Inside our 4-week computer basics bootcamp preparing high school graduates for modern remote work opportunities.</p>
                         </div>
                         <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
-                            <span class="font-semibold text-trustBlue group-hover:text-earthRed flex items-center">Read Article <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i></span>
+                            <span class="font-semibold text-trustBlue group-hover:text-earthRed flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-1"></i></span>
                             <span>4 min read</span>
                         </div>
                     </div>
@@ -548,14 +637,14 @@
                         <img src="#" alt="Health camp" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-earthRed text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase">Health</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
                         <div class="space-y-2">
-                            <span class="text-[11px] text-gray-400 font-bold uppercase block">August 12, 2026</span>
-                            <h3 class="font-bold text-trustBlue text-lg leading-snug group-hover:text-earthRed transition">Clean Water & Hygiene Outreach in Rural Kajiado</h3>
+                            <span class="text-[10px] sm:text-[11px] text-gray-400 font-bold uppercase block">August 12, 2026</span>
+                            <h3 class="font-bold text-trustBlue text-base sm:text-lg leading-snug group-hover:text-earthRed transition">Clean Water & Hygiene Outreach in Rural Kajiado</h3>
                             <p class="text-xs text-gray-600 leading-relaxed">How field volunteers distributed water purification kits and conducted sanitation training for pastoral caregivers.</p>
                         </div>
                         <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
-                            <span class="font-semibold text-trustBlue group-hover:text-earthRed flex items-center">Read Article <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i></span>
+                            <span class="font-semibold text-trustBlue group-hover:text-earthRed flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-1"></i></span>
                             <span>3 min read</span>
                         </div>
                     </div>
@@ -564,16 +653,16 @@
                 <article class="blog-item economic bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col cursor-pointer group" onclick="openBlogArticle('makueni-livelihoods')">
                     <div class="relative h-48 bg-gray-200">
                         <img src="#" alt="Women support" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-green-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase">Empowerment</span>
+                        <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-orange-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase">Empowerment</span>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
                         <div class="space-y-2">
-                            <span class="text-[11px] text-gray-400 font-bold uppercase block">July 19, 2026</span>
-                            <h3 class="font-bold text-trustBlue text-lg leading-snug group-hover:text-earthRed transition">Livelihood Toolkits for Caregivers in Makueni County</h3>
+                            <span class="text-[10px] sm:text-[11px] text-gray-400 font-bold uppercase block">July 19, 2026</span>
+                            <h3 class="font-bold text-trustBlue text-base sm:text-lg leading-snug group-hover:text-earthRed transition">Livelihood Toolkits for Caregivers in Makueni County</h3>
                             <p class="text-xs text-gray-600 leading-relaxed">Supporting women caregivers with agricultural starter kits and vocational micro-training to build long-term economic stability.</p>
                         </div>
                         <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
-                            <span class="font-semibold text-trustBlue group-hover:text-earthRed flex items-center">Read Article <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i></span>
+                            <span class="font-semibold text-trustBlue group-hover:text-earthRed flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-1"></i></span>
                             <span>6 min read</span>
                         </div>
                     </div>
@@ -583,27 +672,27 @@
     </section>
 
     <!-- Volunteer Onboarding Form -->
-    <section id="volunteer" class="py-16 bg-white border-t border-gray-200">
-        <div class="max-w-3xl mx-auto px-4">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-extrabold text-trustBlue">Join As A Volunteer</h2>
-                <p class="text-gray-600 mt-2">Sign up to support field projects across Nairobi, Kajiado, Kakamega, Makueni, or Kiambu.</p>
+    <section id="volunteer" class="py-12 sm:py-16 bg-white border-t border-gray-200">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-8 sm:mb-10">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-trustBlue">Join As A Volunteer</h2>
+                <p class="text-gray-600 text-xs sm:text-sm mt-2">Sign up to support field projects across Nairobi, Kajiado, Kakamega, Makueni, or Kiambu.</p>
             </div>
             <form onsubmit="handleVolunteerSubmit(event)" class="space-y-4">
-                <div class="grid md:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Full Name</label>
-                        <input type="text" required placeholder="e.g. Jane Doe" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-trustBlue focus:outline-none">
+                        <input type="text" required placeholder="e.g. Jane Doe" class="w-full px-4 py-2.5 text-xs sm:text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-trustBlue focus:outline-none">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Email Address</label>
-                        <input type="email" required placeholder="jane@example.com" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-trustBlue focus:outline-none">
+                        <input type="email" required placeholder="jane@example.com" class="w-full px-4 py-2.5 text-xs sm:text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-trustBlue focus:outline-none">
                     </div>
                 </div>
-                <div class="grid md:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Preferred County</label>
-                        <select class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-trustBlue focus:outline-none">
+                        <select class="w-full px-4 py-2.5 text-xs sm:text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-trustBlue focus:outline-none">
                             <option>Nairobi</option>
                             <option>Kajiado</option>
                             <option>Kakamega</option>
@@ -613,8 +702,9 @@
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Primary Skill Area</label>
-                        <select class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-trustBlue focus:outline-none">
+                        <select class="w-full px-4 py-2.5 text-xs sm:text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-trustBlue focus:outline-none">
                             <option>Education & Teaching</option>
+                            <option>Environment & Climate Action</option>
                             <option>Youth & Women Empowerment</option>
                             <option>Health & Sanitation</option>
                             <option>ICT & Technical Training</option>
@@ -622,19 +712,19 @@
                         </select>
                     </div>
                 </div>
-                <button type="submit" class="w-full bg-trustBlue hover:bg-blue-900 text-white font-bold py-3 rounded-lg shadow transition">Submit Volunteer Application</button>
+                <button type="submit" class="w-full bg-trustBlue hover:bg-blue-900 text-white font-bold py-3 rounded-lg shadow transition text-xs sm:text-sm">Submit Volunteer Application</button>
             </form>
         </div>
     </section>
 
     <!-- ALX-INSPIRED MODERN MEGA FOOTER -->
-    <footer class="bg-gray-950 text-gray-300 pt-16 pb-8 border-t border-gray-800">
+    <footer class="bg-gray-950 text-gray-300 pt-12 sm:pt-16 pb-8 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Footer Top CTA / Newsletter Banner -->
-            <div class="bg-gradient-to-r from-trustBlue to-blue-900 rounded-3xl p-8 md:p-12 mb-16 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8 text-white">
+            <div class="bg-gradient-to-r from-trustBlue to-blue-900 rounded-3xl p-6 sm:p-10 lg:p-12 mb-12 sm:mb-16 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 text-white">
                 <div class="max-w-xl space-y-2 text-center lg:text-left">
-                    <span class="bg-warmGold text-trustBlue text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-widest inline-block">Stay Connected</span>
-                    <h3 class="text-2xl sm:text-3xl font-black">Join the Movement for Change</h3>
+                    <span class="bg-warmGold text-trustBlue text-[10px] sm:text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-widest inline-block">Stay Connected</span>
+                    <h3 class="text-xl sm:text-3xl font-black">Join the Movement for Change</h3>
                     <p class="text-xs sm:text-sm text-blue-100 leading-relaxed">Subscribe to receive monthly dispatches, field proof impact metrics, and volunteer drive announcements directly in your inbox.</p>
                 </div>
                 <form onsubmit="handleNewsletterSubmit(event)" class="w-full lg:w-auto flex flex-col sm:flex-row gap-2 max-w-md">
@@ -644,9 +734,9 @@
             </div>
 
             <!-- Footer Columns Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-gray-800">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 pb-12 border-b border-gray-800">
                 <!-- Column 1: Brand & Identity -->
-                <div class="lg:col-span-2 space-y-4">
+                <div class="sm:col-span-2 lg:col-span-2 space-y-4">
                     <div class="flex items-center space-x-3">
                         <div class="w-10 h-10 bg-trustBlue text-warmGold rounded-full flex items-center justify-center font-bold text-xl shadow">WV</div>
                         <div>
@@ -654,8 +744,8 @@
                             <span class="block text-[10px] font-bold text-earthRed tracking-widest uppercase">FOR CHANGE</span>
                         </div>
                     </div>
-                    <p class="text-xs text-gray-400 leading-relaxed pr-4">
-                        A registered Non-Governmental Organization in Kenya dedicated to catalyzing grassroots transformation across education, youth and women empowerment, healthcare access, and digital inclusion.
+                    <p class="text-xs text-gray-400 leading-relaxed pr-0 sm:pr-4">
+                        A registered Non-Governmental Organization in Kenya dedicated to catalyzing grassroots transformation across education, climate change adaptation, youth/women empowerment, healthcare access, and digital inclusion.
                     </p>
                     <div class="flex items-center space-x-3 pt-2">
                         <a href="https://facebook.com" target="_blank" class="w-8 h-8 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-warmGold transition"><i class="fa-brands fa-facebook"></i></a>
@@ -670,6 +760,7 @@
                     <span class="text-xs font-bold uppercase tracking-wider text-white block">Impact Pillars</span>
                     <ul class="space-y-2 text-xs text-gray-400">
                         <li><a href="#pillars" onclick="viewPillarProjects('education')" class="hover:text-warmGold transition">Education Access</a></li>
+                        <li><a href="#pillars" onclick="viewPillarProjects('environment')" class="hover:text-warmGold transition">Environment & Climate Adaptation</a></li>
                         <li><a href="#pillars" onclick="viewPillarProjects('health')" class="hover:text-warmGold transition">Health & Sanitation</a></li>
                         <li><a href="#pillars" onclick="viewPillarProjects('ict')" class="hover:text-warmGold transition">ICT & Digital Skills</a></li>
                         <li><a href="#pillars" onclick="viewPillarProjects('empowerment')" class="hover:text-warmGold transition">Youth & Women Empowerment</a></li>
@@ -702,11 +793,11 @@
             </div>
 
             <!-- Footer Bottom Legal & Copyright Bar -->
-            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4 text-center sm:text-left">
                 <div>
                     © 2026 Worldwide Volunteers for Change. All Rights Reserved.
                 </div>
-                <div class="flex items-center space-x-6">
+                <div class="flex flex-wrap justify-center space-x-4 sm:space-x-6">
                     <a href="#about" class="hover:text-gray-300 transition">Privacy Policy</a>
                     <a href="#about" class="hover:text-gray-300 transition">Terms of Service</a>
                     <a href="#about" class="hover:text-gray-300 transition">Volunteer Charter</a>
@@ -716,14 +807,14 @@
     </footer>
 
     <!-- DYNAMIC LIVE SITE SEARCH RESULT MODAL -->
-    <div id="searchResultsModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden z-50 flex items-start justify-center pt-20 p-4">
-        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 shadow-2xl relative max-h-[80vh] flex flex-col">
-            <div class="flex justify-between items-center border-b border-gray-100 pb-4 mb-4">
+    <div id="searchResultsModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden z-50 flex items-start justify-center pt-16 sm:pt-20 p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-4 sm:p-6 shadow-2xl relative max-h-[80vh] flex flex-col">
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3 mb-3">
                 <div class="flex items-center space-x-2 text-trustBlue font-bold text-xs sm:text-sm">
-                    <i data-lucide="search" class="w-4 h-4 text-earthRed"></i>
+                    <i class="fa-solid fa-magnifying-glass text-earthRed"></i>
                     <span>Search Results</span>
                 </div>
-                <button onclick="closeSearchResults()" class="text-gray-400 hover:text-gray-600"><i data-lucide="x" class="w-5 h-5"></i></button>
+                <button onclick="closeSearchResults()" class="text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
             
             <div id="searchResultsContainer" class="overflow-y-auto space-y-3">
@@ -734,128 +825,137 @@
 
     <!-- Dual Payment Modal (M-Pesa / Card) -->
     <div id="donateModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
-            <button onclick="toggleDonateModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i data-lucide="x"></i></button>
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button onclick="toggleDonateModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark text-lg"></i></button>
             <h3 class="text-xl font-extrabold text-trustBlue mb-1">Make a Contribution</h3>
             <p class="text-xs text-gray-500 mb-6">Choose your preferred payment method below.</p>
             
             <div class="flex border-b border-gray-200 mb-6">
-                <button onclick="switchTab('mpesa')" id="tab-mpesa" class="w-1/2 py-2 font-bold text-sm text-green-600 border-b-2 border-green-600">M-PESA Express</button>
-                <button onclick="switchTab('card')" id="tab-card" class="w-1/2 py-2 font-bold text-sm text-gray-400 border-b-2 border-transparent">Card / Global</button>
+                <button onclick="switchTab('mpesa')" id="tab-mpesa" class="w-1/2 py-2 font-bold text-xs sm:text-sm text-green-600 border-b-2 border-green-600">M-PESA Express</button>
+                <button onclick="switchTab('card')" id="tab-card" class="w-1/2 py-2 font-bold text-xs sm:text-sm text-gray-400 border-b-2 border-transparent">Card / Global</button>
             </div>
 
             <!-- M-Pesa Panel -->
             <div id="panel-mpesa" class="space-y-4">
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase mb-1">M-Pesa Phone Number</label>
-                    <input type="tel" placeholder="07XX XXX XXX" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:outline-none">
+                    <input type="tel" placeholder="07XX XXX XXX" class="w-full px-4 py-2.5 text-xs sm:text-sm rounded-lg border border-gray-300 focus:outline-none">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Amount (KES)</label>
-                    <input type="number" value="1500" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:outline-none">
+                    <input type="number" value="1500" class="w-full px-4 py-2.5 text-xs sm:text-sm rounded-lg border border-gray-300 focus:outline-none">
                 </div>
-                <button onclick="alert('M-Pesa STK Push initiated on your phone!')" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg shadow">Trigger M-Pesa Prompt</button>
+                <button onclick="alert('M-Pesa STK Push initiated on your phone!')" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg shadow text-xs sm:text-sm">Trigger M-Pesa Prompt</button>
             </div>
 
             <!-- Card Panel -->
             <div id="panel-card" class="space-y-4 hidden">
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Card Details</label>
-                    <input type="text" placeholder="4532 •••• •••• ••••" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:outline-none">
+                    <input type="text" placeholder="4532 •••• •••• ••••" class="w-full px-4 py-2.5 text-xs sm:text-sm rounded-lg border border-gray-300 focus:outline-none">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Amount (USD)</label>
-                    <input type="number" value="15" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:outline-none">
+                    <input type="number" value="15" class="w-full px-4 py-2.5 text-xs sm:text-sm rounded-lg border border-gray-300 focus:outline-none">
                 </div>
-                <button onclick="alert('Processing Card Payment...')" class="w-full bg-trustBlue hover:bg-blue-900 text-white font-bold py-3 rounded-lg shadow">Pay via Credit Card</button>
+                <button onclick="alert('Processing Card Payment...')" class="w-full bg-trustBlue hover:bg-blue-900 text-white font-bold py-3 rounded-lg shadow text-xs sm:text-sm">Pay via Credit Card</button>
             </div>
         </div>
     </div>
 
     <!-- EVENT RSVP MODAL -->
     <div id="rsvpModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative">
-            <button onclick="closeRsvpModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i data-lucide="x"></i></button>
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeRsvpModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark text-lg"></i></button>
             <span class="text-xs font-bold text-earthRed uppercase tracking-wider block mb-1">Volunteer Event RSVP</span>
-            <h3 id="rsvpModalTitle" class="text-xl font-extrabold text-trustBlue mb-1">Event Title</h3>
+            <h3 id="rsvpModalTitle" class="text-lg sm:text-xl font-extrabold text-trustBlue mb-1">Event Title</h3>
             <p id="rsvpModalLocation" class="text-xs text-gray-500 mb-6">Location</p>
             
             <form onsubmit="handleRsvpSubmit(event)" class="space-y-4">
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Your Full Name</label>
-                    <input type="text" required placeholder="e.g. John Doe" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:outline-none">
+                    <input type="text" required placeholder="e.g. John Doe" class="w-full px-4 py-2.5 text-xs sm:text-sm rounded-lg border border-gray-300 focus:outline-none">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Phone Number (M-Pesa/WhatsApp)</label>
-                    <input type="tel" required placeholder="07XX XXX XXX" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:outline-none">
+                    <input type="tel" required placeholder="07XX XXX XXX" class="w-full px-4 py-2.5 text-xs sm:text-sm rounded-lg border border-gray-300 focus:outline-none">
                 </div>
-                <button type="submit" class="w-full bg-trustBlue hover:bg-blue-900 text-white font-bold py-3 rounded-xl shadow transition">Confirm Seat Reservation</button>
+                <button type="submit" class="w-full bg-trustBlue hover:bg-blue-900 text-white font-bold py-3 rounded-xl shadow transition text-xs sm:text-sm">Confirm Seat Reservation</button>
             </form>
         </div>
     </div>
 
-    <!-- FULL ARTICLE READ MODAL (ALX Africa Style) -->
-    <div id="blogArticleModal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden z-50 flex items-center justify-center p-2 sm:p-4 overflow-y-auto">
-        <div class="bg-white rounded-3xl max-w-4xl w-full my-8 overflow-hidden shadow-2xl relative max-h-[90vh] flex flex-col">
-            <div class="p-6 bg-trustBlue text-white flex justify-between items-center sticky top-0 z-10">
-                <span id="articleModalCategory" class="bg-warmGold text-trustBlue text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-wider">Education</span>
-                <button onclick="closeBlogArticle()" class="bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition">
-                    <i data-lucide="x" class="w-5 h-5"></i>
+    <!-- FULL ARTICLE READ MODAL -->
+    <div id="blogArticleModal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden z-50 flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-4xl w-full my-6 sm:my-8 overflow-hidden shadow-2xl relative max-h-[90vh] flex flex-col">
+            <div class="p-4 sm:p-6 bg-trustBlue text-white flex justify-between items-center sticky top-0 z-10 shrink-0">
+                <span id="articleModalCategory" class="bg-warmGold text-trustBlue text-[10px] sm:text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-wider">Education</span>
+                <button onclick="closeBlogArticle()" class="bg-white/20 hover:bg-white/40 text-white p-1.5 sm:p-2 rounded-full transition">
+                    <i class="fa-solid fa-xmark text-base"></i>
                 </button>
             </div>
             
-            <div class="p-6 sm:p-10 overflow-y-auto space-y-6">
+            <div class="p-5 sm:p-10 overflow-y-auto space-y-6">
                 <div class="space-y-2 border-b border-gray-100 pb-4">
-                    <span id="articleModalDate" class="text-xs text-gray-400 font-bold uppercase">September 2026 • 5 min read</span>
-                    <h2 id="articleModalTitle" class="text-2xl sm:text-4xl font-extrabold text-trustBlue leading-tight">Article Title</h2>
+                    <span id="articleModalDate" class="text-[10px] sm:text-xs text-gray-400 font-bold uppercase">September 2026 • 5 min read</span>
+                    <h2 id="articleModalTitle" class="text-xl sm:text-3xl font-extrabold text-trustBlue leading-tight">Article Title</h2>
                     <div class="flex items-center space-x-3 pt-2">
-                        <div class="w-9 h-9 rounded-full bg-trustBlue text-warmGold font-bold flex items-center justify-center text-xs">CEO</div>
+                        <div class="w-8 h-8 rounded-full bg-trustBlue text-warmGold font-bold flex items-center justify-center text-xs">CEO</div>
                         <div class="text-xs">
-                            <span id="articleModalAuthor" class="font-bold text-gray-800 block">CEO</span>
+                            <span id="articleModalAuthor" class="font-bold text-gray-800 block">WVFC Leadership</span>
                             <span class="text-gray-400">Chairperson & Lead Advocate</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="h-72 bg-gray-200 rounded-2xl overflow-hidden">
+                <div class="h-48 sm:h-72 bg-gray-200 rounded-2xl overflow-hidden">
                     <img id="articleModalImg" src="" alt="Article Banner" class="w-full h-full object-cover">
                 </div>
 
-                <div id="articleModalContent" class="prose max-w-none text-gray-700 text-sm sm:text-base leading-relaxed space-y-4">
+                <div id="articleModalContent" class="prose max-w-none text-gray-700 text-xs sm:text-base leading-relaxed space-y-4">
                     <!-- Dynamic Body Text Injected via JS -->
                 </div>
 
                 <div class="pt-6 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-4">
                     <div class="flex items-center space-x-2 text-xs font-bold text-gray-500">
                         <span>Share Article:</span>
-                        <button onclick="alert('Article link copied to clipboard!')" class="bg-gray-100 p-2 rounded-full hover:bg-gray-200"><i data-lucide="share-2" class="w-4 h-4 text-trustBlue"></i></button>
+                        <button onclick="alert('Article link copied to clipboard!')" class="bg-gray-100 p-2 rounded-full hover:bg-gray-200"><i class="fa-solid fa-share-nodes text-trustBlue"></i></button>
                     </div>
-                    <button onclick="closeBlogArticle()" class="bg-trustBlue hover:bg-blue-900 text-white font-bold text-xs px-6 py-2.5 rounded-full transition">Close Article</button>
+                    <button onclick="closeBlogArticle()" class="w-full sm:w-auto bg-trustBlue hover:bg-blue-900 text-white font-bold text-xs px-6 py-2.5 rounded-full transition">Close Article</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- LIGHTBOX MODAL (Standard Group Gallery Style) -->
+    <!-- LIGHTBOX MODAL -->
     <div id="galleryModal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl relative">
+        <div class="bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl relative max-h-[90vh] flex flex-col">
             <button onclick="closeLightbox()" class="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full hover:bg-black transition z-10">
-                <i data-lucide="x" class="w-5 h-5"></i>
+                <i class="fa-solid fa-xmark text-lg"></i>
             </button>
-            <div class="h-80 bg-gray-900 relative">
+            <div class="h-56 sm:h-80 bg-gray-900 relative shrink-0">
                 <img id="modalImg" src="" alt="Modal Image" class="w-full h-full object-cover">
             </div>
-            <div class="p-8 space-y-3">
+            <div class="p-6 sm:p-8 space-y-3 overflow-y-auto">
                 <span id="modalMeta" class="text-xs font-bold text-earthRed uppercase tracking-wider">Category & Location</span>
-                <h3 id="modalTitle" class="text-2xl font-black text-trustBlue">Project Title</h3>
-                <p id="modalDesc" class="text-sm text-gray-600 leading-relaxed">Detailed project description goes here...</p>
+                <h3 id="modalTitle" class="text-xl sm:text-2xl font-black text-trustBlue">Project Title</h3>
+                <p id="modalDesc" class="text-xs sm:text-sm text-gray-600 leading-relaxed">Detailed project description goes here...</p>
             </div>
         </div>
     </div>
 
     <!-- Interactive JavaScript Logic -->
     <script>
-        lucide.createIcons();
+        // Mobile Drawer Navigation Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const openIcon = document.getElementById('menuOpenIcon');
+            const closeIcon = document.getElementById('menuCloseIcon');
+            
+            menu.classList.toggle('hidden');
+            openIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        }
 
         // Articles Data Store
         const blogArticles = {
@@ -863,12 +963,22 @@
                 category: 'Education & OVC Support',
                 title: 'Bridging the Learning Gap: How School Subsidies Transformed 150+ Lives in Kakamega',
                 date: 'September 2026 • 5 min read',
-                author: 'CEO',
+                author: 'WVFC Leadership',
                 img: '#',
-                content: `<p class="text-lg font-serif italic text-trustBlue border-l-4 border-warmGold pl-4">In many rural communities across Kakamega County, the barrier to educational continuity isn't a lack of desire—it is the acute financial burden of school fees, uniform requirements, and basic learning materials.</p>
+                content: `<p class="text-base sm:text-lg font-serif italic text-trustBlue border-l-4 border-warmGold pl-4">In many rural communities across Kakamega County, the barrier to educational continuity isn't a lack of desire—it is the acute financial burden of school fees, uniform requirements, and basic learning materials.</p>
                 <p>Through our 2026 Education Access Initiative, Worldwide Volunteers for Change deployed field volunteers directly to local primary and secondary institutions to identify orphans and vulnerable children (OVCs) at risk of dropping out.</p>
                 <p>Over 150 students received full tuition support packages, complete uniform sets, and essential textbooks. By partnering directly with school heads and community caregivers, we ensured 100% retention rate for supported students across the academic term.</p>
                 <blockquote class="bg-gray-50 border-l-4 border-earthRed p-4 my-4 font-bold text-gray-800">"When a child gets a uniform and books, their self-esteem transforms overnight. They stop feeling out of place and start focusing on their future." — Volunteer Coordinator, Kakamega</blockquote>`
+            },
+            'kajiado-climate': {
+                category: 'Environment & Climate Action',
+                title: 'Reforestation & Sustainable Eco-Clubs in Kajiado Schools',
+                date: 'September 02, 2026 • 5 min read',
+                author: 'WVFC Climate Team',
+                img: '#',
+                content: `<p class="text-base sm:text-lg font-serif italic text-trustBlue border-l-4 border-emerald-600 pl-4">Climate change adaptation begins at the community level. In drought-prone zones, integrating tree planting with youth environmental stewardship creates lasting ecological defenses.</p>
+                <p>In partnership with Kajiado county primary schools, our volunteers established 8 active school eco-clubs and planted 2,500 indigenous drought-resistant tree seedlings.</p>
+                <p>Students take daily ownership of seedling care and rainwater harvesting systems, fostering long-term environmental conservation leadership across the region.</p>`
             },
             'nairobi-ict': {
                 category: 'ICT & Tech Skills',
@@ -876,7 +986,7 @@
                 date: 'August 28, 2026 • 4 min read',
                 author: 'WVFC Tech Team',
                 img: '#',
-                content: `<p class="text-lg font-serif italic text-trustBlue border-l-4 border-warmGold pl-4">Digital literacy is no longer a luxury—it is the baseline requirement for modern economic inclusion.</p>
+                content: `<p class="text-base sm:text-lg font-serif italic text-trustBlue border-l-4 border-warmGold pl-4">Digital literacy is no longer a luxury—it is the baseline requirement for modern economic inclusion.</p>
                 <p>At our Nairobi Ngong Headquarters, Worldwide Volunteers for Change hosted a 4-week computer basics bootcamp targeting peri-urban high school graduates and unemployed youth.</p>
                 <p>Participants received practical training in document processing, basic web navigation, digital communication tools, and online freelance workflow platforms. 85% of graduates reported increased confidence in applying for digital entry-level roles.</p>`
             },
@@ -886,7 +996,7 @@
                 date: 'August 12, 2026 • 3 min read',
                 author: 'Field Ops Unit',
                 img: '#',
-                content: `<p class="text-lg font-serif italic text-trustBlue border-l-4 border-warmGold pl-4">Access to clean water and health education forms the foundation of strong community resilience.</p>
+                content: `<p class="text-base sm:text-lg font-serif italic text-trustBlue border-l-4 border-warmGold pl-4">Access to clean water and health education forms the foundation of strong community resilience.</p>
                 <p>Our healthcare volunteer unit visited pastoral communities in Kajiado County, providing water purification tablets, hygiene kits, and interactive public health workshops.</p>
                 <p>Specialized sessions focused on reproductive health education and preventative hygiene standards, reaching over 450 caregivers and young mothers.</p>`
             },
@@ -894,9 +1004,9 @@
                 category: 'Economic Inclusion',
                 title: 'Livelihood Toolkits for Caregivers in Makueni County',
                 date: 'July 19, 2026 • 6 min read',
-                author: 'CEO',
+                author: 'WVFC Leadership',
                 img: '#',
-                content: `<p class="text-lg font-serif italic text-trustBlue border-l-4 border-warmGold pl-4">Empowering women caregivers directly improves household stability for vulnerable children.</p>
+                content: `<p class="text-base sm:text-lg font-serif italic text-trustBlue border-l-4 border-warmGold pl-4">Empowering women caregivers directly improves household stability for vulnerable children.</p>
                 <p>In Makueni County, our Economic Empowerment team distributed agricultural starter kits, poultry tools, and vocational micro-training packages to women heading low-income households.</p>
                 <p>By establishing micro-livelihoods, participating caregivers generated independent income streams to support household nutrition and local school expenses.</p>`
             }
@@ -904,14 +1014,16 @@
 
         // Site Search Index
         const siteSearchIndex = [
+            { type: 'Article', title: 'Reforestation & Sustainable Eco-Clubs in Kajiado', category: 'Environment', action: () => openBlogArticle('kajiado-climate') },
             { type: 'Article', title: 'Bridging the Learning Gap in Kakamega', category: 'Education', action: () => openBlogArticle('featured') },
             { type: 'Article', title: 'Equipping Nairobi Youth with Workforce Digital Skills', category: 'ICT Skills', action: () => openBlogArticle('nairobi-ict') },
             { type: 'Article', title: 'Clean Water & Hygiene Outreach in Kajiado', category: 'Health', action: () => openBlogArticle('kajiado-health') },
             { type: 'Article', title: 'Livelihood Toolkits for Caregivers in Makueni', category: 'Economic', action: () => openBlogArticle('makueni-livelihoods') },
             { type: 'County', title: 'Nairobi County HQ', category: 'Urban ICT & Education', action: () => { window.location.href='#counties'; selectCounty('nairobi'); } },
-            { type: 'County', title: 'Kajiado County Branch', category: 'Health & Water', action: () => { window.location.href='#counties'; selectCounty('kajiado'); } },
+            { type: 'County', title: 'Kajiado County Branch', category: 'Climate & Health Outreach', action: () => { window.location.href='#counties'; selectCounty('kajiado'); } },
             { type: 'County', title: 'Kakamega County Branch', category: 'School Fee Subsidies', action: () => { window.location.href='#counties'; selectCounty('kakamega'); } },
             { type: 'County', title: 'Makueni County Branch', category: 'Women Economic Inclusion', action: () => { window.location.href='#counties'; selectCounty('makueni'); } },
+            { type: 'Event', title: 'Community Reforestation & Seedling Planting Drive', category: 'Climate Event', action: () => { window.location.href='#events'; openRsvpModal('Community Reforestation & Seedling Planting Drive', 'Kajiado County'); } },
             { type: 'Event', title: 'Annual Back-To-School Learning Kit Distribution', category: 'Kakamega Event', action: () => { window.location.href='#events'; openRsvpModal('Annual Back-To-School Kit Distribution', 'Kakamega'); } }
         ];
 
@@ -920,16 +1032,16 @@
             nairobi: {
                 title: 'Nairobi County HQ',
                 heading: 'Urban ICT & Education Hub',
-                desc: 'Central hub managing tech literacy programs, digital volunteer coordination, and emergency relief distribution for vulnerable urban settlements.',
+                desc: 'Central hub managing tech literacy programs, digital volunteer coordination, tree planting drives, and emergency relief distribution for vulnerable urban settlements.',
                 focus: 'ICT & School Supplies',
-                target: 'Youth & OVCs'
+                target: 'Youth & Street Children'
             },
             kajiado: {
                 title: 'Kajiado County Branch',
-                heading: 'Water, Sanitation & Community Health',
-                desc: 'Focusing on clean water access, hygiene sensitization, and healthcare outreach for peri-urban and rural pastoral communities.',
-                focus: 'Health & Sanitation',
-                target: 'Caregivers & Children'
+                heading: 'Water, Sanitation & Climate Adaptation',
+                desc: 'Focusing on clean water access, tree planting drives, environmental clubs, and healthcare outreach for peri-urban and rural pastoral communities.',
+                focus: 'Climate Action & Health',
+                target: 'Caregivers & School Youth'
             },
             kakamega: {
                 title: 'Kakamega County Branch',
@@ -982,10 +1094,9 @@
                             <span class="text-[10px] font-bold text-earthRed uppercase">${item.type} • ${item.category}</span>
                             <h4 class="text-xs font-bold text-trustBlue">${item.title}</h4>
                         </div>
-                        <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+                        <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
                     </div>
                 `).join('');
-                lucide.createIcons();
             }
 
             modal.classList.remove('hidden');
@@ -1009,9 +1120,9 @@
             document.getElementById('county-target').innerText = data.target;
 
             document.querySelectorAll('.county-btn').forEach(btn => {
-                btn.className = 'county-btn bg-white text-gray-700 hover:bg-gray-200 px-5 py-2.5 rounded-full font-bold text-sm shadow';
+                btn.className = 'county-btn bg-white text-gray-700 hover:bg-gray-200 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm shadow';
             });
-            document.getElementById(`btn-${key}`).className = 'county-btn bg-trustBlue text-white px-5 py-2.5 rounded-full font-bold text-sm shadow';
+            document.getElementById(`btn-${key}`).className = 'county-btn bg-trustBlue text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm shadow';
         }
 
         function toggleDonateModal() {
@@ -1025,13 +1136,13 @@
             const cardPanel = document.getElementById('panel-card');
 
             if (tab === 'mpesa') {
-                mpesaTab.className = "w-1/2 py-2 font-bold text-sm text-green-600 border-b-2 border-green-600";
-                cardTab.className = "w-1/2 py-2 font-bold text-sm text-gray-400 border-b-2 border-transparent";
+                mpesaTab.className = "w-1/2 py-2 font-bold text-xs sm:text-sm text-green-600 border-b-2 border-green-600";
+                cardTab.className = "w-1/2 py-2 font-bold text-xs sm:text-sm text-gray-400 border-b-2 border-transparent";
                 mpesaPanel.classList.remove('hidden');
                 cardPanel.classList.add('hidden');
             } else {
-                cardTab.className = "w-1/2 py-2 font-bold text-sm text-trustBlue border-b-2 border-trustBlue";
-                mpesaTab.className = "w-1/2 py-2 font-bold text-sm text-gray-400 border-b-2 border-transparent";
+                cardTab.className = "w-1/2 py-2 font-bold text-xs sm:text-sm text-trustBlue border-b-2 border-trustBlue";
+                mpesaTab.className = "w-1/2 py-2 font-bold text-xs sm:text-sm text-gray-400 border-b-2 border-transparent";
                 cardPanel.classList.remove('hidden');
                 mpesaPanel.classList.add('hidden');
             }
@@ -1042,11 +1153,11 @@
             const btns = document.querySelectorAll('.gfilter-btn');
 
             btns.forEach(btn => {
-                btn.className = 'gfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-6 py-2.5 rounded-full transition';
+                btn.className = 'gfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-4 py-2 sm:px-6 sm:py-2.5 rounded-full transition';
             });
             const targetBtn = document.getElementById(`gfilter-${category}`);
             if (targetBtn) {
-                targetBtn.className = 'gfilter-btn bg-trustBlue text-white text-xs font-bold px-6 py-2.5 rounded-full shadow-sm transition';
+                targetBtn.className = 'gfilter-btn bg-trustBlue text-white text-xs font-bold px-4 py-2 sm:px-6 sm:py-2.5 rounded-full shadow-sm transition';
             }
 
             items.forEach(item => {
@@ -1063,11 +1174,11 @@
             const btns = document.querySelectorAll('.bfilter-btn');
 
             btns.forEach(btn => {
-                btn.className = 'bfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-5 py-2.5 rounded-full transition';
+                btn.className = 'bfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-4 py-2 sm:px-5 sm:py-2.5 rounded-full transition';
             });
             const targetBtn = document.getElementById(`bfilter-${category}`);
             if (targetBtn) {
-                targetBtn.className = 'bfilter-btn bg-trustBlue text-white text-xs font-bold px-5 py-2.5 rounded-full shadow-sm transition';
+                targetBtn.className = 'bfilter-btn bg-trustBlue text-white text-xs font-bold px-4 py-2 sm:px-5 sm:py-2.5 rounded-full shadow-sm transition';
             }
 
             items.forEach(item => {
@@ -1086,13 +1197,13 @@
             const pastPanel = document.getElementById('events-past-panel');
 
             if (type === 'upcoming') {
-                upcomingBtn.className = "px-5 py-2 text-xs font-bold rounded-lg bg-trustBlue text-white shadow transition";
-                pastBtn.className = "px-5 py-2 text-xs font-bold rounded-lg text-gray-500 hover:text-trustBlue transition";
+                upcomingBtn.className = "px-4 py-2 text-xs font-bold rounded-lg bg-trustBlue text-white shadow transition";
+                pastBtn.className = "px-4 py-2 text-xs font-bold rounded-lg text-gray-500 hover:text-trustBlue transition";
                 upcomingPanel.classList.remove('hidden');
                 pastPanel.classList.add('hidden');
             } else {
-                pastBtn.className = "px-5 py-2 text-xs font-bold rounded-lg bg-trustBlue text-white shadow transition";
-                upcomingBtn.className = "px-5 py-2 text-xs font-bold rounded-lg text-gray-500 hover:text-trustBlue transition";
+                pastBtn.className = "px-4 py-2 text-xs font-bold rounded-lg bg-trustBlue text-white shadow transition";
+                upcomingBtn.className = "px-4 py-2 text-xs font-bold rounded-lg text-gray-500 hover:text-trustBlue transition";
                 pastPanel.classList.remove('hidden');
                 upcomingPanel.classList.add('hidden');
             }
