@@ -548,7 +548,7 @@
         </div>
     </section>
 
-    <!-- BLOG HUB -->
+    <!-- BLOG HUB (STORIES OF TRANSFORMATION) -->
     <section id="blog" class="py-12 sm:py-16 bg-white border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
@@ -594,8 +594,48 @@
                 <button onclick="filterBlog('economic')" id="bfilter-economic" class="bfilter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs font-bold px-4 py-2 sm:px-5 sm:py-2.5 rounded-full transition">Economic Inclusion</button>
             </div>
 
-            <!-- Article Grid -->
+            <!-- Article Grid (Includes New Articles for Education and Youth & Women) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="blog-grid">
+                
+                <!-- NEW EDUCATION ARTICLE -->
+                <article class="blog-item education bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col cursor-pointer group" onclick="openBlogArticle('kiambu-library')">
+                    <div class="relative h-48 bg-gray-200">
+                        <img src="#" alt="Community Library Initiative" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-trustBlue text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase">Education</span>
+                    </div>
+                    <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <span class="text-[10px] sm:text-[11px] text-gray-400 font-bold uppercase block">September 10, 2026</span>
+                            <h3 class="font-bold text-trustBlue text-base sm:text-lg leading-snug group-hover:text-earthRed transition">Empowering Rural Learners Through Community Book & Study Hubs</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">Establishing mobile libraries and evening study centers in Kiambu to ensure every child has access to textbooks and quiet reading spaces.</p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+                            <span class="font-semibold text-trustBlue group-hover:text-earthRed flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                            <span>4 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- NEW YOUTH & WOMEN EMPOWERMENT ARTICLE -->
+                <article class="blog-item empowerment bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col cursor-pointer group" onclick="openBlogArticle('kiambu-incubator')">
+                    <div class="relative h-48 bg-gray-200">
+                        <img src="#" alt="Women Business Incubator" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-purple-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase">Youth & Women</span>
+                    </div>
+                    <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <span class="text-[10px] sm:text-[11px] text-gray-400 font-bold uppercase block">September 06, 2026</span>
+                            <h3 class="font-bold text-trustBlue text-base sm:text-lg leading-snug group-hover:text-earthRed transition">From Apprentices to Entrepreneurs: Supporting 40 Young Female Artisans</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">Providing business seed grants, tailoring machinery, and leadership mentorship to young women starting micro-enterprises.</p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+                            <span class="font-semibold text-trustBlue group-hover:text-earthRed flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                            <span>5 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Existing Articles -->
                 <article class="blog-item environment bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col cursor-pointer group" onclick="openBlogArticle('kajiado-climate')">
                     <div class="relative h-48 bg-gray-200">
                         <img src="#" alt="Climate Action" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -717,7 +757,7 @@
         </div>
     </section>
 
-    <!-- ALX-INSPIRED MODERN MEGA FOOTER -->
+    <!-- MODERN MEGA FOOTER -->
     <footer class="bg-gray-950 text-gray-300 pt-12 sm:pt-16 pb-8 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Footer Top CTA / Newsletter Banner -->
@@ -970,6 +1010,26 @@
                 <p>Over 150 students received full tuition support packages, complete uniform sets, and essential textbooks. By partnering directly with school heads and community caregivers, we ensured 100% retention rate for supported students across the academic term.</p>
                 <blockquote class="bg-gray-50 border-l-4 border-earthRed p-4 my-4 font-bold text-gray-800">"When a child gets a uniform and books, their self-esteem transforms overnight. They stop feeling out of place and start focusing on their future." — Volunteer Coordinator, Kakamega</blockquote>`
             },
+            'kiambu-library': {
+                category: 'Education Access',
+                title: 'Empowering Rural Learners Through Community Book & Study Hubs',
+                date: 'September 10, 2026 • 4 min read',
+                author: 'WVFC Education Taskforce',
+                img: '#',
+                content: `<p class="text-base sm:text-lg font-serif italic text-trustBlue border-l-4 border-trustBlue pl-4">Access to core curriculum textbooks and quiet evening study environments remains a significant hurdle for students in rural settlements.</p>
+                <p>In Kiambu County, Worldwide Volunteers for Change partnered with local school boards to establish 4 solar-powered community study hubs equipped with over 1,200 curriculum books and revision guides.</p>
+                <p>Volunteer tutors facilitate daily after-school homework sessions, peer reading clubs, and literacy assessment drives, raising national examination pass rates by over 35% among participating pupils.</p>`
+            },
+            'kiambu-incubator': {
+                category: 'Youth & Women Empowerment',
+                title: 'From Apprentices to Entrepreneurs: Supporting 40 Young Female Artisans',
+                date: 'September 06, 2026 • 5 min read',
+                author: 'WVFC Empowerment Team',
+                img: '#',
+                content: `<p class="text-base sm:text-lg font-serif italic text-trustBlue border-l-4 border-purple-600 pl-4">Socioeconomic self-reliance begins with practical skill acquisition and direct micro-enterprise support.</p>
+                <p>Through our female empowerment incubator in Kiambu County, 40 young women completed intensive 8-week bootcamps covering garment design, business management, and micro-finance literacy.</p>
+                <p>Each graduate received specialized sewing equipment, starter fabric inventory, and ongoing business mentorship, launching 12 independent collective tailoring enterprises that now support local school uniform production.</p>`
+            },
             'kajiado-climate': {
                 category: 'Environment & Climate Action',
                 title: 'Reforestation & Sustainable Eco-Clubs in Kajiado Schools',
@@ -1014,6 +1074,8 @@
 
         // Site Search Index
         const siteSearchIndex = [
+            { type: 'Article', title: 'Empowering Rural Learners Through Community Book & Study Hubs', category: 'Education', action: () => openBlogArticle('kiambu-library') },
+            { type: 'Article', title: 'From Apprentices to Entrepreneurs: Supporting 40 Young Female Artisans', category: 'Youth & Women', action: () => openBlogArticle('kiambu-incubator') },
             { type: 'Article', title: 'Reforestation & Sustainable Eco-Clubs in Kajiado', category: 'Environment', action: () => openBlogArticle('kajiado-climate') },
             { type: 'Article', title: 'Bridging the Learning Gap in Kakamega', category: 'Education', action: () => openBlogArticle('featured') },
             { type: 'Article', title: 'Equipping Nairobi Youth with Workforce Digital Skills', category: 'ICT Skills', action: () => openBlogArticle('nairobi-ict') },
